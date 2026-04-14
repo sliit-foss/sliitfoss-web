@@ -1,0 +1,31 @@
+export const skillOptions = [
+  "JavaScript",
+  "TypeScript",
+  "Python",
+  "Rust",
+  "Go",
+  "Java",
+  "C/C++",
+  "React",
+  "Next.js",
+  "Svelte",
+  "Node.js",
+  "DevOps",
+  "Docker",
+  "Kubernetes",
+  "AI/ML",
+  "Cybersecurity",
+  "UI/UX Design",
+  "Mobile Development",
+  "Blockchain",
+  "Cloud (AWS/GCP/Azure)",
+];
+
+export const yearOptions = [
+  "1st Year",
+  "2nd Year",
+  "3rd Year",
+  "4th Year",
+  "Postgraduate",
+  "Alumni",
+];
