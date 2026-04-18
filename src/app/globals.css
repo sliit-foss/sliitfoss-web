@@ -87,6 +87,44 @@
   }
 }
 
+/* Liquid Glass Utilities */
+.liquid-glass {
+  position: relative;
+  isolation: isolate;
+  background-color: rgba(245, 245, 248, 0.01); /* Base background behind text */
+  border-radius: 136px;
+}
+
+.liquid-glass::after {
+  content: "";
+  -webkit-backdrop-filter: blur(14px); /* Increased blur instead of SVG filter if not using an advanced SVG map, but let's keep their filter for exact matching */
+  backdrop-filter: blur(14px);
+  filter: url("#displacementFilter");
+  isolation: isolate;
+  border-radius: inherit;
+  width: 100%;
+  height: 100%;
+  padding: 6px;
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.liquid-glass::before {
+  content: "";
+  z-index: 1;
+  background: linear-gradient(160deg, rgba(255,255,255,0.9) 0%, rgba(122,122,122,0.2) 45% 55%, rgba(255,255,255,0.9) 100%);
+  border-radius: inherit;
+  padding: 1px;
+  position: absolute;
+  inset: 0;
+  -webkit-mask: linear-gradient(#000 0 0), linear-gradient(#000 0 0) content-box;
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) exclude, linear-gradient(#000 0 0) content-box;
+  pointer-events: none;
+}
+
 /* Gradient text utility */
 .text-gradient {
   background: linear-gradient(135deg, #555 0%, #888 50%, #aaa 100%);

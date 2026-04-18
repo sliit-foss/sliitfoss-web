@@ -36,6 +36,12 @@ export default function RootLayout({
       className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} antialiased`}
     >
       <body className="min-h-screen bg-[#fafafa] text-[#111]">
+        <svg className="hidden">
+          <filter id="displacementFilter">
+            <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="1" result="noise" />
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G" />
+          </filter>
+        </svg>
         <Navbar />
         <main>{children}</main>
         <Footer />
