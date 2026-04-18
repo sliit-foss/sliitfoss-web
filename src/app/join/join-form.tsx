@@ -3,9 +3,12 @@
 import { useState } from "react";
 import { skillOptions, yearOptions } from "@/content/join-form";
 import { FadeUp } from "@/components/animations/fade-up";
+import SubmitButton from "@/components/animations/submit-button";
+import SubmitAnimation from "../../components/animations/submit-animation";
 
 export function JoinForm() {
   const [selectedSkills, setSelectedSkills] = useState<string[]>([]);
+  const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
   function toggleSkill(skill: string) {
@@ -14,11 +17,21 @@ export function JoinForm() {
     );
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     // TODO: Wire to API endpoint
+    // simulating API call 
+    console.log("clicked");
+    setLoading(true);
+    await new Promise((resolve) => setTimeout(resolve, 6300));
+
+    await new Promise((r) => setTimeout(r, 300));
+    setLoading(false);
     setSubmitted(true);
+
   }
+
+  if (loading) return <SubmitAnimation />;
 
   if (submitted) {
     return (
@@ -35,6 +48,7 @@ export function JoinForm() {
       </section>
     );
   }
+
 
   return (
     <section className="py-12 pb-24 px-6 bg-[#fafafa]">
@@ -133,11 +147,10 @@ export function JoinForm() {
                     key={skill}
                     type="button"
                     onClick={() => toggleSkill(skill)}
-                    className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all ${
-                      selectedSkills.includes(skill)
-                        ? "bg-[#111] text-white"
-                        : "bg-white border border-black/[0.06] text-[#666] hover:border-black/[0.12]"
-                    }`}
+                    className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all ${selectedSkills.includes(skill)
+                      ? "bg-[#111] text-white"
+                      : "bg-white border border-black/[0.06] text-[#666] hover:border-black/[0.12]"
+                      }`}
                   >
                     {skill}
                   </button>
@@ -157,13 +170,9 @@ export function JoinForm() {
                 placeholder="Tell us about yourself and what excites you about open source..."
               />
             </div>
+            
+            <SubmitButton loading={loading} />
 
-            <button
-              type="submit"
-              className="w-full px-8 py-4 rounded-xl bg-[#111] text-white text-sm font-semibold transition-all hover:shadow-lg"
-            >
-              Submit Application
-            </button>
           </form>
         </FadeUp>
       </div>
