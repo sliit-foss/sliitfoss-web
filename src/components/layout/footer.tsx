@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const navColumns = [
   {
@@ -35,10 +36,16 @@ export function Footer() {
       <div className="max-w-5xl mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-12">
           <div className="col-span-2 md:col-span-1">
-            <div className="font-heading font-bold text-lg mb-3">
-              SLIIT FOSS
+            <div className="mb-4">
+              <Image 
+                src="/logo-dark.png" 
+                alt="SLIIT FOSS" 
+                width={120} 
+                height={40} 
+                className="h-10 w-auto"
+              />
             </div>
-            <p className="text-sm text-[#999] leading-relaxed">
+            <p className="text-sm text-[#999] text-left leading-relaxed">
               A community of volunteers who believe in the power of Free & Open
               Source Software.
             </p>
