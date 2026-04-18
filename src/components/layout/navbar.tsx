@@ -22,15 +22,20 @@ export function Navbar() {
       >
         <Link
           href="/"
-          className="flex items-center justify-center w-8 h-8 rounded-full bg-[#f8f9fa] border border-[#eee] transition-opacity hover:opacity-80"
+          className="group flex overflow-hidden items-center justify-start h-8 rounded-full bg-[#f8f9fa] border border-[#eee] transition-all duration-300 w-8 hover:w-[110px]"
         >
-          <Image
-            src="/logo-dark.png"
-            alt="SLIIT FOSS"
-            width={16}
-            height={16}
-            className="w-4 h-4 object-contain"
-          />
+          <div className="flex-shrink-0 w-8 h-8 flex items-center justify-center">
+            <Image
+              src="/logo-dark.png"
+              alt="SLIIT FOSS"
+              width={16}
+              height={16}
+              className="w-4 h-4 object-contain"
+            />
+          </div>
+          <span className="text-[0.7rem] font-medium tracking-wide whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pr-3 text-[#333]">
+            SLIIT FOSS
+          </span>
         </Link>
       </motion.div>
 

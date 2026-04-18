@@ -93,7 +93,7 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.25 }}
           >
             A collective of student developers pushing the boundaries of open
-            source — one commit at a time.
+            source. One commit at a time.
           </motion.p>
 
           <motion.div
@@ -170,17 +170,6 @@ export function Hero() {
             </div>
           </div>
         </motion.div>
-      </motion.div>
-
-      {/* Scroll Hint */}
-      <motion.div
-        className="absolute bottom-10 left-1/2 z-10 animate-bob flex flex-col items-center gap-2"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0.25 }}
-        transition={{ delay: 1.2, duration: 0.6 }}
-      >
-        <span className="text-[0.65rem] tracking-[3px] uppercase text-[#999]">Scroll</span>
-        <div className="w-px h-10 bg-gradient-to-b from-[#ccc] to-transparent" />
       </motion.div>
     </section>
   );
