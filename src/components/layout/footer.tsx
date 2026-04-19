@@ -7,6 +7,7 @@ const navColumns = [
     links: [
       { href: "/about", label: "About" },
       { href: "/events", label: "Events" },
+      { href: "/gallery", label: "Gallery" },
       { href: "/blog", label: "Blog" },
       { href: "/contact", label: "Contact" },
     ],
@@ -25,7 +26,7 @@ const navColumns = [
     links: [
       { href: "#", label: "Projects" },
       { href: "#", label: "Podcast" },
-      { href: "#", label: "Gallery" },
+      { href: "/gallery", label: "Gallery" },
     ],
   },
 ];

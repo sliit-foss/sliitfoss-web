@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { events, getEventBySlug, formatEventDate, eventTypeLabel } from "@/content/events";
+import { events, getEventBySlug } from "@/content/events";
 import { EventDetail } from "./event-detail";
 
 export function generateStaticParams() {

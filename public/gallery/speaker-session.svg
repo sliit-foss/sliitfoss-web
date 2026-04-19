@@ -1,0 +1,48 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="900" fill="url(#bg)"/>
+  <g filter="url(#glow)">
+    <ellipse cx="318" cy="208" rx="223" ry="197" fill="#F4C45A"/>
+    <ellipse cx="1025" cy="177" rx="200" ry="156" fill="#DDE7F4"/>
+  </g>
+  <path d="M78 72H1124V820H78V72Z" fill="url(#hall)"/>
+  <path d="M78 72H1124V204L915 820H181C124 820 78 774 78 717V72Z" fill="url(#sun)"/>
+  <path d="M286 190H1105" stroke="#A57048" stroke-width="6" opacity="0.24"/>
+  <path d="M286 300H1042" stroke="#A57048" stroke-width="6" opacity="0.24"/>
+  <path d="M286 410H984" stroke="#A57048" stroke-width="6" opacity="0.24"/>
+  <path d="M953 72V820" stroke="#1D2837" stroke-width="12"/>
+  <path d="M1028 72V820" stroke="#1D2837" stroke-width="12"/>
+  <path d="M1110 72V820" stroke="#1D2837" stroke-width="12"/>
+  <path d="M952 328H1124" stroke="#1D2837" stroke-width="10"/>
+  <path d="M952 526H1124" stroke="#1D2837" stroke-width="10"/>
+  <rect x="402" y="512" width="188" height="134" rx="18" fill="#EFE8DE" opacity="0.95"/>
+  <rect x="744" y="530" width="162" height="104" rx="12" fill="#B78663"/>
+  <rect x="778" y="592" width="10" height="92" rx="5" fill="#8F6245"/>
+  <rect x="861" y="592" width="10" height="92" rx="5" fill="#8F6245"/>
+  <g filter="url(#fade)">
+    <rect y="694" width="1200" height="206" fill="url(#floorFade)"/>
+  </g>
+  <defs>
+    <filter id="glow" x="-23" y="-130" width="1587" height="675" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="59"/>
+    </filter>
+    <filter id="fade" x="-40" y="654" width="1280" height="286" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="20"/>
+    </filter>
+    <linearGradient id="bg" x1="600" y1="0" x2="600" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#EFE7D7"/>
+      <stop offset="1" stop-color="#C49A6F"/>
+    </linearGradient>
+    <linearGradient id="hall" x1="601" y1="72" x2="601" y2="820" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E0B27E"/>
+      <stop offset="1" stop-color="#C38A5A"/>
+    </linearGradient>
+    <linearGradient id="sun" x1="601" y1="72" x2="601" y2="820" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#B17649" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#F7D28E" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="floorFade" x1="600" y1="694" x2="600" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#B38352" stop-opacity="0"/>
+      <stop offset="1" stop-color="#9D734C" stop-opacity="0.9"/>
+    </linearGradient>
+  </defs>
+</svg>

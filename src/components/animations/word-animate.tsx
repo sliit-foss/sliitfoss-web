@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import { motion, useScroll, useTransform, useInView } from "motion/react";
+import { motion, useInView } from "motion/react";
 
 interface WordAnimateProps {
   children: string;
