@@ -9,13 +9,13 @@ export function GalleryGrid() {
   return (
     <section className="pb-24 md:pb-32 px-6 bg-[#fafafa]">
       <div className="max-w-6xl mx-auto">
-        <FadeUp className="mb-8 md:mb-10">
+        {/* <FadeUp className="mb-8 md:mb-10">
           <p className="max-w-2xl text-sm md:text-base text-[#777] leading-relaxed">
             From workshops and hackathons to speaker sessions and behind-the-scenes
             build nights, this space is meant to hold the moments that shape the
             SLIIT FOSS community.
           </p>
-        </FadeUp>
+        </FadeUp> */}
 
         <div className="rounded-[2rem] border border-black/[0.05] bg-white p-3 md:p-4 shadow-[0_24px_80px_rgba(17,17,17,0.05)]">
           <Stagger
