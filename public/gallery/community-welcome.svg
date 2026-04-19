@@ -1,0 +1,62 @@
+<svg width="1200" height="1245" viewBox="0 0 1200 1245" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="1245" fill="#E9ECEF"/>
+  <rect width="1200" height="1245" fill="url(#bg)"/>
+  <g filter="url(#blurA)">
+    <circle cx="986" cy="286" r="226" fill="#B8DBF6"/>
+    <circle cx="270" cy="1148" r="254" fill="#E1D49C"/>
+  </g>
+  <rect x="84" y="74" width="1032" height="1097" rx="52" fill="url(#room)"/>
+  <path d="M135 164H1034V814H135V164Z" fill="#CFD9E9"/>
+  <path d="M135 164H1034V276L721 503L135 814V164Z" fill="#E6EFFA"/>
+  <path d="M205 236H965V742H205V236Z" fill="url(#windowLight)"/>
+  <path d="M205 236H965V742" stroke="#26313F" stroke-width="16"/>
+  <path d="M205 236V742H965" stroke="#26313F" stroke-width="16"/>
+  <path d="M321 236V742M447 236V742M573 236V742M699 236V742M825 236V742" stroke="#31404E" stroke-width="10" opacity="0.9"/>
+  <path d="M205 447H965M205 580H965" stroke="#31404E" stroke-width="10" opacity="0.9"/>
+  <path d="M205 742C356 672 493 644 633 642C782 640 885 664 965 689V742H205Z" fill="url(#garden)"/>
+  <path d="M65 52H1094V224L1080 1171H160C124 1171 96 1142 96 1106L65 52Z" fill="url(#wood)" opacity="0.88"/>
+  <rect x="355" y="802" width="452" height="30" rx="15" fill="#7A563B" opacity="0.45"/>
+  <g opacity="0.9">
+    <rect x="330" y="744" width="48" height="116" rx="8" fill="#6E4B33"/>
+    <rect x="425" y="744" width="48" height="116" rx="8" fill="#6E4B33"/>
+    <rect x="520" y="744" width="48" height="116" rx="8" fill="#6E4B33"/>
+    <rect x="615" y="744" width="48" height="116" rx="8" fill="#6E4B33"/>
+    <rect x="710" y="744" width="48" height="116" rx="8" fill="#6E4B33"/>
+  </g>
+  <g filter="url(#fade)">
+    <rect y="868" width="1200" height="377" fill="url(#fog)"/>
+  </g>
+  <defs>
+    <filter id="blurA" x="-154" y="-138" width="1566" height="1708" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="99"/>
+    </filter>
+    <filter id="fade" x="-40" y="828" width="1280" height="457" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="20"/>
+    </filter>
+    <linearGradient id="bg" x1="600" y1="0" x2="600" y2="1245" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F5F4F1"/>
+      <stop offset="1" stop-color="#DDE1E4"/>
+    </linearGradient>
+    <linearGradient id="room" x1="600" y1="74" x2="600" y2="1171" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#EFE6D8"/>
+      <stop offset="1" stop-color="#B68A63"/>
+    </linearGradient>
+    <linearGradient id="windowLight" x1="585" y1="236" x2="585" y2="742" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#EDF3FB"/>
+      <stop offset="0.64" stop-color="#F7FAFD"/>
+      <stop offset="1" stop-color="#D9C858"/>
+    </linearGradient>
+    <linearGradient id="garden" x1="585" y1="642" x2="585" y2="742" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#EAD976"/>
+      <stop offset="1" stop-color="#B5AE47"/>
+    </linearGradient>
+    <linearGradient id="wood" x1="580" y1="52" x2="580" y2="1171" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7C5A3F"/>
+      <stop offset="1" stop-color="#B78663" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="fog" x1="600" y1="868" x2="600" y2="1245" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#CFC8B0" stop-opacity="0"/>
+      <stop offset="1" stop-color="#9A988E" stop-opacity="0.86"/>
+    </linearGradient>
+  </defs>
+</svg>

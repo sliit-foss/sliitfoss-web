@@ -1,0 +1,49 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="900" fill="url(#bg)"/>
+  <g filter="url(#blur)">
+    <ellipse cx="884" cy="166" rx="232" ry="168" fill="#E3D15D"/>
+    <ellipse cx="306" cy="778" rx="274" ry="196" fill="#BFD6A9"/>
+  </g>
+  <path d="M33 94H1169V807H33V94Z" fill="url(#frame)"/>
+  <path d="M95 150H1104V744H95V150Z" fill="url(#photo)"/>
+  <path d="M126 194H1074V342H126V194Z" fill="#D9E6F3"/>
+  <rect x="154" y="232" width="892" height="36" rx="18" fill="#405369" opacity="0.22"/>
+  <g opacity="0.95">
+    <rect x="172" y="426" width="226" height="198" rx="22" fill="#50677B"/>
+    <rect x="488" y="394" width="226" height="230" rx="22" fill="#4D6377"/>
+    <rect x="804" y="420" width="226" height="204" rx="22" fill="#536A7E"/>
+  </g>
+  <rect x="456" y="308" width="292" height="134" rx="18" fill="url(#screen)"/>
+  <rect x="534" y="356" width="128" height="12" rx="6" fill="#F6FAFF" opacity="0.82"/>
+  <path d="M112 669C228 596 350 565 486 566C648 568 781 623 902 629C989 633 1053 614 1092 593V744H112V669Z" fill="url(#audience)"/>
+  <rect x="0" y="668" width="1200" height="232" fill="url(#fade)"/>
+  <defs>
+    <filter id="blur" x="-118" y="-118" width="1234" height="1146" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="59"/>
+    </filter>
+    <linearGradient id="bg" x1="600" y1="0" x2="600" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F4F1E9"/>
+      <stop offset="1" stop-color="#DBE1E2"/>
+    </linearGradient>
+    <linearGradient id="frame" x1="601" y1="94" x2="601" y2="807" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F7F7F5"/>
+      <stop offset="1" stop-color="#EEECE6"/>
+    </linearGradient>
+    <linearGradient id="photo" x1="599.5" y1="150" x2="599.5" y2="744" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#DDE8F4"/>
+      <stop offset="1" stop-color="#A0B38C"/>
+    </linearGradient>
+    <linearGradient id="screen" x1="602" y1="308" x2="602" y2="442" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F4FDFF"/>
+      <stop offset="1" stop-color="#A8C5E9"/>
+    </linearGradient>
+    <linearGradient id="audience" x1="602" y1="566" x2="602" y2="744" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#B9C98D"/>
+      <stop offset="1" stop-color="#7B8753"/>
+    </linearGradient>
+    <linearGradient id="fade" x1="600" y1="668" x2="600" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A89E3A" stop-opacity="0"/>
+      <stop offset="1" stop-color="#8A7B2A" stop-opacity="0.88"/>
+    </linearGradient>
+  </defs>
+</svg>

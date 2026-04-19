@@ -1,0 +1,55 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" fill="url(#sky)"/>
+  <g filter="url(#blur)">
+    <ellipse cx="220" cy="80" rx="294" ry="194" fill="#D4ECF7"/>
+    <ellipse cx="1341" cy="631" rx="332" ry="178" fill="#A9C684"/>
+  </g>
+  <path d="M0 655C169 625 403 617 569 644C754 674 860 732 1043 714C1261 693 1420 578 1600 547V900H0V655Z" fill="url(#ground)"/>
+  <path d="M0 663C172 613 326 570 437 565C618 557 789 658 969 660C1114 662 1281 597 1600 464V900H0V663Z" fill="url(#path)" opacity="0.74"/>
+  <path d="M858 171H1280V692H858V171Z" fill="url(#hall)"/>
+  <path d="M858 171L1086 0L1280 171H858Z" fill="#DCE3EF"/>
+  <rect x="923" y="268" width="268" height="242" rx="12" fill="url(#glass)"/>
+  <path d="M174 146C184 416 220 535 314 654" stroke="#3D594D" stroke-width="14" stroke-linecap="round"/>
+  <path d="M221 220C350 368 448 462 599 566" stroke="#496557" stroke-width="12" stroke-linecap="round" opacity="0.7"/>
+  <rect x="360" y="573" width="214" height="24" rx="12" fill="#425A6C" opacity="0.14"/>
+  <rect x="372" y="516" width="38" height="96" rx="9" fill="#49646E"/>
+  <rect x="448" y="516" width="38" height="96" rx="9" fill="#49646E"/>
+  <rect x="524" y="516" width="38" height="96" rx="9" fill="#49646E"/>
+  <g opacity="0.78">
+    <circle cx="690" cy="607" r="24" fill="#49646E"/>
+    <rect x="676" y="628" width="28" height="66" rx="14" fill="#49646E"/>
+    <circle cx="777" cy="612" r="22" fill="#49646E"/>
+    <rect x="764" y="632" width="26" height="62" rx="13" fill="#49646E"/>
+  </g>
+  <rect x="0" y="744" width="1600" height="156" fill="url(#fade)"/>
+  <defs>
+    <filter id="blur" x="-192" y="-116" width="1865" height="925" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="59"/>
+    </filter>
+    <linearGradient id="sky" x1="800" y1="0" x2="800" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#9BC2F2"/>
+      <stop offset="0.67" stop-color="#B7D4E5"/>
+      <stop offset="1" stop-color="#8BAA88"/>
+    </linearGradient>
+    <linearGradient id="ground" x1="800" y1="547" x2="800" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#B8CB66"/>
+      <stop offset="1" stop-color="#6C7D3D"/>
+    </linearGradient>
+    <linearGradient id="path" x1="800" y1="464" x2="800" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D1E2F2"/>
+      <stop offset="1" stop-color="#99ACBA"/>
+    </linearGradient>
+    <linearGradient id="hall" x1="1069" y1="171" x2="1069" y2="692" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8FAFD"/>
+      <stop offset="1" stop-color="#B8C6D3"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="1057" y1="268" x2="1057" y2="510" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FDF1BE"/>
+      <stop offset="1" stop-color="#7EB7EA"/>
+    </linearGradient>
+    <linearGradient id="fade" x1="800" y1="744" x2="800" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#75833D" stop-opacity="0"/>
+      <stop offset="1" stop-color="#69702E" stop-opacity="0.88"/>
+    </linearGradient>
+  </defs>
+</svg>

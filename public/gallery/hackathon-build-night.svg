@@ -1,0 +1,48 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" fill="url(#sky)"/>
+  <g filter="url(#glow)">
+    <ellipse cx="913" cy="305" rx="460" ry="214" fill="#A5C6F2"/>
+    <ellipse cx="830" cy="727" rx="549" ry="125" fill="#C7B845"/>
+  </g>
+  <path d="M0 684C179 652 312 634 488 630C690 625 891 664 1125 650C1330 638 1464 584 1600 549V900H0V684Z" fill="url(#field)"/>
+  <path d="M484 532L724 322L955 517V740H484V532Z" fill="#F5F6F8"/>
+  <path d="M728 322L822 220L928 322H728Z" fill="#F7F8FA"/>
+  <path d="M944 516L1092 362L1243 516V740H944V516Z" fill="#FBFBFD"/>
+  <path d="M397 553L537 421L675 553V740H397V553Z" fill="#F3F4F6" opacity="0.82"/>
+  <path d="M721 322L955 517" stroke="#C8CED9" stroke-width="11"/>
+  <path d="M731 517H852V740H731V517Z" fill="#3B4A5E"/>
+  <path d="M799 356H946V516H799V356Z" fill="url(#litWindow)"/>
+  <path d="M1007 451H1149V563H1007V451Z" fill="url(#litWindow2)"/>
+  <path d="M535 595H603V664H535V595Z" fill="url(#smallLight)"/>
+  <rect x="0" y="770" width="1600" height="130" fill="url(#fade)"/>
+  <defs>
+    <filter id="glow" x="-100" y="-9" width="1913" height="949" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="50"/>
+    </filter>
+    <linearGradient id="sky" x1="800" y1="0" x2="800" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8FB5E3"/>
+      <stop offset="0.65" stop-color="#7D9CCA"/>
+      <stop offset="1" stop-color="#617898"/>
+    </linearGradient>
+    <linearGradient id="field" x1="800" y1="549" x2="800" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D8D149"/>
+      <stop offset="1" stop-color="#8F8932"/>
+    </linearGradient>
+    <linearGradient id="litWindow" x1="872.5" y1="356" x2="872.5" y2="516" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFE8A8"/>
+      <stop offset="1" stop-color="#F9AF4E"/>
+    </linearGradient>
+    <linearGradient id="litWindow2" x1="1078" y1="451" x2="1078" y2="563" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFE2A1"/>
+      <stop offset="1" stop-color="#FFB35E"/>
+    </linearGradient>
+    <linearGradient id="smallLight" x1="569" y1="595" x2="569" y2="664" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F7E6AE"/>
+      <stop offset="1" stop-color="#E3B95B"/>
+    </linearGradient>
+    <linearGradient id="fade" x1="800" y1="770" x2="800" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#989236" stop-opacity="0"/>
+      <stop offset="1" stop-color="#7B7425" stop-opacity="0.92"/>
+    </linearGradient>
+  </defs>
+</svg>
