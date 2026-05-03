@@ -1,9 +1,6 @@
 name: CI Code Quality + Build
 on:
   pull_request:
-    branches:
-      - main
-      - dev
 
 jobs:
   checks:
