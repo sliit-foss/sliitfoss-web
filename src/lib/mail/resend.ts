@@ -46,17 +46,6 @@ type ContactPayload = {
   message: string;
 };
 
-type MembershipPayload = {
-  name: string;
-  email: string;
-  studentId: string;
-  year: string;
-  github: string;
-  portfolio?: string;
-  skills: string[];
-  reason: string;
-};
-
 export const sendContactEmail = async (payload: ContactPayload) => {
   const rows = [
     renderRow("Name", payload.name),
@@ -70,28 +59,6 @@ export const sendContactEmail = async (payload: ContactPayload) => {
     to: toEmail,
     replyTo: payload.email,
     subject: `Contact form — ${payload.name}`,
-    html
-  });
-};
-
-export const sendMembershipEmail = async (payload: MembershipPayload) => {
-  const rows = [
-    renderRow("Name", payload.name),
-    renderRow("Email", payload.email),
-    renderRow("Student ID", payload.studentId),
-    renderRow("Year", payload.year),
-    renderRow("GitHub", payload.github),
-    payload.portfolio ? renderRow("Portfolio", payload.portfolio) : "",
-    renderRow("Skills", payload.skills.length ? payload.skills.join(", ") : "—"),
-    renderRow("Why join", payload.reason)
-  ].join("");
-  const html = wrap("New membership application", rows);
-
-  return getClient().emails.send({
-    from: fromEmail,
-    to: toEmail,
-    replyTo: payload.email,
-    subject: `Membership application — ${payload.name}`,
     html
   });
 };

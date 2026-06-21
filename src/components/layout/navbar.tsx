@@ -29,18 +29,14 @@ function BrandLink({ mobile = false }: { mobile?: boolean }) {
       )}
     >
       <div className={cn("flex items-center justify-center", mobile ? "h-4 w-4" : "h-8 w-8 flex-shrink-0")}>
-        <Image
-          src="/logo-dark.png"
-          alt="SLIIT FOSS"
-          width={16}
-          height={16}
-          className="h-4 w-4 object-contain"
-        />
+        <Image src="/logo-dark.png" alt="SLIIT FOSS" width={16} height={16} className="h-4 w-4 object-contain" />
       </div>
       <span
         className={cn(
           "font-medium tracking-wide whitespace-nowrap",
-          mobile ? "text-[0.72rem] uppercase" : "pr-3 text-[0.7rem] opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+          mobile
+            ? "text-[0.72rem] uppercase"
+            : "pr-3 text-[0.7rem] opacity-0 transition-opacity duration-300 group-hover:opacity-100"
         )}
       >
         SLIIT FOSS
@@ -51,7 +47,12 @@ function BrandLink({ mobile = false }: { mobile?: boolean }) {
 
 function DesktopNavbar({ pathname }: { pathname: string }) {
   return (
-    <header className="pointer-events-none fixed top-6 left-1/2 z-50 hidden w-full max-w-fit -translate-x-1/2 items-center justify-center gap-3 px-4 lg:flex">
+    <header
+      className={cn(
+        "pointer-events-none fixed left-1/2 z-50 hidden w-full max-w-fit -translate-x-1/2 items-center justify-center gap-3 px-4 lg:flex",
+        siteConfig.maintenance.enabled ? "top-[3.75rem]" : "top-6"
+      )}
+    >
       <motion.div
         className="liquid-glass pointer-events-auto p-1"
         initial={{ y: -20, opacity: 0 }}
@@ -105,8 +106,7 @@ export function Navbar() {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const mobileNavbarRef = useRef<HTMLDivElement>(null);
-  const desktopNavItemClass =
-    "bg-[#fafafa] text-[#333] hover:bg-[#f0f0f0] transition-all duration-200";
+  const desktopNavItemClass = "bg-[#fafafa] text-[#333] hover:bg-[#f0f0f0] transition-all duration-200";
 
   useEffect(() => {
     const desktopMediaQuery = window.matchMedia("(min-width: 1024px)");
@@ -156,11 +156,13 @@ export function Navbar() {
     <>
       <DesktopNavbar pathname={pathname} />
 
-      <header className="fixed inset-x-0 top-4 z-50 px-4 lg:hidden">
-        <div
-          ref={mobileNavbarRef}
-          className="pointer-events-none mx-auto flex w-full max-w-sm flex-col"
-        >
+      <header
+        className={cn(
+          "fixed inset-x-0 z-50 px-4 lg:hidden",
+          siteConfig.maintenance.enabled ? "top-[3.25rem]" : "top-4"
+        )}
+      >
+        <div ref={mobileNavbarRef} className="pointer-events-none mx-auto flex w-full max-w-sm flex-col">
           <motion.div
             className="liquid-glass pointer-events-auto flex items-center justify-between p-1.5"
             initial={{ y: -20, opacity: 0 }}
@@ -172,10 +174,7 @@ export function Navbar() {
             <button
               type="button"
               onClick={() => setIsMenuOpen((current) => !current)}
-              className={cn(
-                "flex h-10 w-10 items-center justify-center rounded-2xl",
-                desktopNavItemClass
-              )}
+              className={cn("flex h-10 w-10 items-center justify-center rounded-2xl", desktopNavItemClass)}
               aria-expanded={isMenuOpen}
               aria-controls="mobile-site-navigation"
               aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}

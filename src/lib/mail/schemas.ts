@@ -9,17 +9,25 @@ export const contactSchema = z.object({
 export const membershipSchema = z.object({
   name: z.string().trim().min(1, "Full name is required").max(120),
   email: z.string().trim().email("Enter a valid email address").max(200),
-  studentId: z.string().trim().min(1, "Student ID is required").max(40),
-  year: z.string().trim().min(1, "Year is required"),
+  studentId: z.string().trim().min(1, "Student number is required").max(40),
+  year: z.string().trim().min(1, "Year of study is required"),
+  whatsapp: z
+    .string()
+    .trim()
+    .min(7, "Enter a valid contact number")
+    .max(30)
+    .regex(/^[+0-9 ()-]+$/, "Use only digits, spaces, +, - or ()"),
   github: z
     .string()
     .trim()
-    .min(1, "GitHub username is required")
-    .max(80)
-    .regex(/^[A-Za-z0-9-]+$/, "GitHub username can only contain letters, numbers, and hyphens"),
-  portfolio: z.union([z.literal(""), z.string().trim().url("Portfolio must be a valid URL")]).optional(),
-  skills: z.array(z.string().trim()).max(40).default([]),
-  reason: z.string().trim().min(20, "Tell us a bit more (at least 20 characters)").max(4000)
+    .url("Enter a valid GitHub link")
+    .max(200)
+    .refine((value) => /github\.com/i.test(value), "Enter a link to your GitHub profile"),
+  linkedin: z.union([z.literal(""), z.string().trim().url("Enter a valid LinkedIn link")]).optional(),
+  website: z.union([z.literal(""), z.string().trim().url("Enter a valid URL")]).optional(),
+  employment: z.string().trim().max(200).optional(),
+  teams: z.array(z.string().trim()).min(1, "Pick at least one team").max(3),
+  note: z.string().trim().max(2000).optional()
 });
 
 export type ContactInput = z.infer<typeof contactSchema>;
