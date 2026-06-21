@@ -7,7 +7,7 @@ export const siteConfig = {
     enabled: true,
     message: "🚧 We're currently under maintenance — some features may be unavailable. Thanks for your patience!"
   },
-  whatsappGroup: "https://chat.whatsapp.com/EqePHoSvvGC3kExAhIN0XV",
+  whatsappGroup: "https://chat.whatsapp.com/D2R64rOaXvED98XgvJxTXn",
   socials: {
     github: "https://github.com/sliitfoss",
     linkedin: "https://linkedin.com/company/sliitfoss",

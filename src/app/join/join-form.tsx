@@ -7,6 +7,7 @@ import { FadeUp } from "@/components/animations/fade-up";
 import { FormTransition } from "@/components/animations/form-transition";
 import { FormSuccess } from "@/components/animations/form-success";
 import { ThemedSelect } from "@/components/ui/themed-select";
+import { QRCodeSVG } from "qrcode.react";
 import { submitMembership } from "./actions";
 import { initialFormState } from "@/lib/mail/schemas";
 
@@ -67,7 +68,18 @@ export function JoinForm() {
                   title="Welcome to SLIIT FOSS!"
                   description={state.ok === true ? state.message : ""}
                 />
-                <div className="mt-8 text-center">
+                <div className="mt-8 flex flex-col items-center gap-5">
+                  <div className="rounded-3xl border border-black/[0.06] bg-white p-5 shadow-[0_16px_48px_rgba(17,17,17,0.08)]">
+                    <QRCodeSVG
+                      value={siteConfig.whatsappGroup}
+                      size={176}
+                      level="M"
+                      marginSize={2}
+                      bgColor="#ffffff"
+                      fgColor="#111111"
+                    />
+                  </div>
+                  <p className="text-xs text-[#999]">Scan with your phone to join the group</p>
                   <a
                     href={siteConfig.whatsappGroup}
                     target="_blank"
