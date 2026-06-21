@@ -1,7 +1,7 @@
 "use server";
 
 import { membershipSchema, type FormState } from "@/lib/mail/schemas";
-import { sendMembershipEmail } from "@/lib/mail/resend";
+import { appendMembershipRow } from "@/lib/sheets";
 
 export async function submitMembership(_prev: FormState, formData: FormData): Promise<FormState> {
   const parsed = membershipSchema.safeParse({
@@ -9,10 +9,13 @@ export async function submitMembership(_prev: FormState, formData: FormData): Pr
     email: formData.get("email"),
     studentId: formData.get("studentId"),
     year: formData.get("year"),
+    whatsapp: formData.get("whatsapp"),
     github: formData.get("github"),
-    portfolio: formData.get("portfolio") ?? "",
-    skills: formData.getAll("skills").map(String),
-    reason: formData.get("reason")
+    linkedin: formData.get("linkedin") ?? "",
+    website: formData.get("website") ?? "",
+    employment: formData.get("employment") ?? "",
+    teams: formData.getAll("teams").map(String),
+    note: formData.get("note") ?? ""
   });
 
   if (!parsed.success) {
@@ -20,12 +23,15 @@ export async function submitMembership(_prev: FormState, formData: FormData): Pr
   }
 
   try {
-    const result = await sendMembershipEmail(parsed.data);
+    const result = await appendMembershipRow(parsed.data);
     if (result.error) {
-      return { ok: false, formError: "We could not submit your application. Please try again later." };
+      return { ok: false, formError: "We couldn't submit your application. Please try again later." };
     }
-    return { ok: true, message: "Welcome aboard — we'll reach out via email with next steps." };
+    return {
+      ok: true,
+      message: "You're on the list — welcome aboard! Join the volunteer WhatsApp group below and we'll be in touch."
+    };
   } catch {
-    return { ok: false, formError: "We could not submit your application. Please try again later." };
+    return { ok: false, formError: "We couldn't submit your application. Please try again later." };
   }
 }
