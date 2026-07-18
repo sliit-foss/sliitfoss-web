@@ -12,9 +12,12 @@ import { submitMembership } from "./actions";
 import { initialFormState } from "@/lib/mail/schemas";
 
 const inputClass =
-  "w-full px-4 py-3 rounded-xl border border-black/[0.06] bg-white text-[#111] text-sm focus:outline-none focus:ring-2 focus:ring-[#999]/20 focus:border-[#999] transition-all";
+  "w-full px-4 py-3 rounded-xl border border-black/6 bg-white text-[#111] text-sm focus:outline-none focus:ring-2 focus:ring-[#999]/20 focus:border-[#999] transition-all";
 
 const labelClass = "block text-xs font-medium text-[#555] uppercase tracking-wider mb-2";
+
+const errorClass = "mt-1.5 text-xs text-red-600";
+const errorHiddenClass = "sr-only";
 
 const emptyValues = {
   name: "",
@@ -69,7 +72,7 @@ export function JoinForm() {
                   description={state.ok === true ? state.message : ""}
                 />
                 <div className="mt-8 flex flex-col items-center gap-5">
-                  <div className="rounded-3xl border border-black/[0.06] bg-white p-5 shadow-[0_16px_48px_rgba(17,17,17,0.08)]">
+                  <div className="rounded-3xl border border-black/6 bg-white p-5 shadow-[0_16px_48px_rgba(17,17,17,0.08)]">
                     <QRCodeSVG
                       value={siteConfig.whatsappGroup}
                       size={176}
@@ -107,9 +110,15 @@ export function JoinForm() {
                       onChange={update}
                       className={inputClass}
                       placeholder="Your name"
-                      aria-invalid={Boolean(fieldErrors?.name)}
+                      aria-describedby="join-name-error"
                     />
-                    {fieldErrors?.name && <p className="mt-1.5 text-xs text-red-600">{fieldErrors.name[0]}</p>}
+                    <p
+                      id="join-name-error"
+                      className={fieldErrors?.name ? errorClass : errorHiddenClass}
+                      {...(fieldErrors?.name ? { role: "alert" } : {})}
+                    >
+                      {fieldErrors?.name?.[0] ?? ""}
+                    </p>
                   </div>
                   <div>
                     <label htmlFor="join-email" className={labelClass}>
@@ -124,9 +133,15 @@ export function JoinForm() {
                       onChange={update}
                       className={inputClass}
                       placeholder="you@example.com"
-                      aria-invalid={Boolean(fieldErrors?.email)}
+                      aria-describedby="join-email-error"
                     />
-                    {fieldErrors?.email && <p className="mt-1.5 text-xs text-red-600">{fieldErrors.email[0]}</p>}
+                    <p
+                      id="join-email-error"
+                      className={fieldErrors?.email ? errorClass : errorHiddenClass}
+                      {...(fieldErrors?.email ? { role: "alert" } : {})}
+                    >
+                      {fieldErrors?.email?.[0] ?? ""}
+                    </p>
                   </div>
                 </div>
 
@@ -144,11 +159,15 @@ export function JoinForm() {
                       onChange={update}
                       className={inputClass}
                       placeholder="IT12345678"
-                      aria-invalid={Boolean(fieldErrors?.studentId)}
+                      aria-describedby="join-student-id-error"
                     />
-                    {fieldErrors?.studentId && (
-                      <p className="mt-1.5 text-xs text-red-600">{fieldErrors.studentId[0]}</p>
-                    )}
+                    <p
+                      id="join-student-id-error"
+                      className={fieldErrors?.studentId ? errorClass : errorHiddenClass}
+                      {...(fieldErrors?.studentId ? { role: "alert" } : {})}
+                    >
+                      {fieldErrors?.studentId?.[0] ?? ""}
+                    </p>
                   </div>
                   <div>
                     <label id="join-year-label" className={labelClass}>
@@ -162,8 +181,15 @@ export function JoinForm() {
                       placeholder="Select year"
                       invalid={Boolean(fieldErrors?.year)}
                       aria-labelledby="join-year-label"
+                      aria-describedby="join-year-error"
                     />
-                    {fieldErrors?.year && <p className="mt-1.5 text-xs text-red-600">{fieldErrors.year[0]}</p>}
+                    <p
+                      id="join-year-error"
+                      className={fieldErrors?.year ? errorClass : errorHiddenClass}
+                      {...(fieldErrors?.year ? { role: "alert" } : {})}
+                    >
+                      {fieldErrors?.year?.[0] ?? ""}
+                    </p>
                   </div>
                 </div>
 
@@ -181,9 +207,15 @@ export function JoinForm() {
                       onChange={update}
                       className={inputClass}
                       placeholder="+94 77 123 4567"
-                      aria-invalid={Boolean(fieldErrors?.whatsapp)}
+                      aria-describedby="join-whatsapp-error"
                     />
-                    {fieldErrors?.whatsapp && <p className="mt-1.5 text-xs text-red-600">{fieldErrors.whatsapp[0]}</p>}
+                    <p
+                      id="join-whatsapp-error"
+                      className={fieldErrors?.whatsapp ? errorClass : errorHiddenClass}
+                      {...(fieldErrors?.whatsapp ? { role: "alert" } : {})}
+                    >
+                      {fieldErrors?.whatsapp?.[0] ?? ""}
+                    </p>
                   </div>
                   <div>
                     <label htmlFor="join-github" className={labelClass}>
@@ -198,9 +230,15 @@ export function JoinForm() {
                       onChange={update}
                       className={inputClass}
                       placeholder="https://github.com/yourusername"
-                      aria-invalid={Boolean(fieldErrors?.github)}
+                      aria-describedby="join-github-error"
                     />
-                    {fieldErrors?.github && <p className="mt-1.5 text-xs text-red-600">{fieldErrors.github[0]}</p>}
+                    <p
+                      id="join-github-error"
+                      className={fieldErrors?.github ? errorClass : errorHiddenClass}
+                      {...(fieldErrors?.github ? { role: "alert" } : {})}
+                    >
+                      {fieldErrors?.github?.[0] ?? ""}
+                    </p>
                   </div>
                 </div>
 
@@ -217,9 +255,15 @@ export function JoinForm() {
                       onChange={update}
                       className={inputClass}
                       placeholder="https://linkedin.com/in/you"
-                      aria-invalid={Boolean(fieldErrors?.linkedin)}
+                      aria-describedby="join-linkedin-error"
                     />
-                    {fieldErrors?.linkedin && <p className="mt-1.5 text-xs text-red-600">{fieldErrors.linkedin[0]}</p>}
+                    <p
+                      id="join-linkedin-error"
+                      className={fieldErrors?.linkedin ? errorClass : errorHiddenClass}
+                      {...(fieldErrors?.linkedin ? { role: "alert" } : {})}
+                    >
+                      {fieldErrors?.linkedin?.[0] ?? ""}
+                    </p>
                   </div>
                   <div>
                     <label htmlFor="join-website" className={labelClass}>
@@ -233,9 +277,15 @@ export function JoinForm() {
                       onChange={update}
                       className={inputClass}
                       placeholder="https://yoursite.com"
-                      aria-invalid={Boolean(fieldErrors?.website)}
+                      aria-describedby="join-website-error"
                     />
-                    {fieldErrors?.website && <p className="mt-1.5 text-xs text-red-600">{fieldErrors.website[0]}</p>}
+                    <p
+                      id="join-website-error"
+                      className={fieldErrors?.website ? errorClass : errorHiddenClass}
+                      {...(fieldErrors?.website ? { role: "alert" } : {})}
+                    >
+                      {fieldErrors?.website?.[0] ?? ""}
+                    </p>
                   </div>
                 </div>
 
@@ -251,31 +301,45 @@ export function JoinForm() {
                     onChange={update}
                     className={inputClass}
                     placeholder="e.g. Software Engineering Intern at Acme (optional)"
-                    aria-invalid={Boolean(fieldErrors?.employment)}
+                    aria-describedby="join-employment-error"
                   />
-                  {fieldErrors?.employment && (
-                    <p className="mt-1.5 text-xs text-red-600">{fieldErrors.employment[0]}</p>
-                  )}
+                  <p
+                    id="join-employment-error"
+                    className={fieldErrors?.employment ? errorClass : errorHiddenClass}
+                    {...(fieldErrors?.employment ? { role: "alert" } : {})}
+                  >
+                    {fieldErrors?.employment?.[0] ?? ""}
+                  </p>
                 </div>
 
-                <div>
-                  <label className={labelClass}>Which teams interest you? *</label>
+                <div role="group" aria-labelledby="join-teams-label" aria-describedby="join-teams-error">
+                  <p id="join-teams-label" className={labelClass}>
+                    Which teams interest you? *
+                  </p>
                   <p className="mb-3 text-xs text-[#999]">Pick one or more — you can be part of multiple teams.</p>
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                     {teamOptions.map((team) => {
                       const active = selectedTeams.includes(team.name);
+                      const checkboxId = `join-team-${team.name.toLowerCase().replace(/\s+/g, "-")}`;
                       return (
-                        <button
+                        <label
                           key={team.name}
-                          type="button"
-                          onClick={() => toggleTeam(team.name)}
-                          aria-pressed={active}
-                          className={`text-left rounded-2xl border p-4 transition-all ${
+                          htmlFor={checkboxId}
+                          className={`block cursor-pointer text-left rounded-2xl border p-4 transition-all ${
                             active
                               ? "border-[#111] bg-white shadow-sm"
-                              : "border-black/[0.06] bg-white hover:border-black/[0.12]"
+                              : "border-black/6 bg-white hover:border-black/12"
                           }`}
                         >
+                          <input
+                            id={checkboxId}
+                            type="checkbox"
+                            name="teams"
+                            value={team.name}
+                            checked={active}
+                            onChange={() => toggleTeam(team.name)}
+                            className="sr-only"
+                          />
                           <div className="text-2xl mb-2" aria-hidden>
                             {team.emoji}
                           </div>
@@ -283,20 +347,23 @@ export function JoinForm() {
                           <div className="mt-1 text-xs leading-relaxed text-[#777]">{team.description}</div>
                           <div
                             className={`mt-3 inline-flex h-5 w-5 items-center justify-center rounded-full border text-[10px] transition-colors ${
-                              active ? "border-[#111] bg-[#111] text-white" : "border-black/[0.15] text-transparent"
+                              active ? "border-[#111] bg-[#111] text-white" : "border-black/15 text-transparent"
                             }`}
                             aria-hidden
                           >
                             ✓
                           </div>
-                        </button>
+                        </label>
                       );
                     })}
                   </div>
-                  {selectedTeams.map((team) => (
-                    <input key={team} type="hidden" name="teams" value={team} />
-                  ))}
-                  {fieldErrors?.teams && <p className="mt-2 text-xs text-red-600">{fieldErrors.teams[0]}</p>}
+                  <p
+                    id="join-teams-error"
+                    className={fieldErrors?.teams ? errorClass : errorHiddenClass}
+                    {...(fieldErrors?.teams ? { role: "alert" } : {})}
+                  >
+                    {fieldErrors?.teams?.[0] ?? ""}
+                  </p>
                 </div>
 
                 <div>
@@ -311,9 +378,15 @@ export function JoinForm() {
                     onChange={update}
                     className={`${inputClass} resize-none`}
                     placeholder="Optional — tell us anything else (projects, links, questions)."
-                    aria-invalid={Boolean(fieldErrors?.note)}
+                    aria-describedby="join-note-error"
                   />
-                  {fieldErrors?.note && <p className="mt-1.5 text-xs text-red-600">{fieldErrors.note[0]}</p>}
+                  <p
+                    id="join-note-error"
+                    className={fieldErrors?.note ? errorClass : errorHiddenClass}
+                    {...(fieldErrors?.note ? { role: "alert" } : {})}
+                  >
+                    {fieldErrors?.note?.[0] ?? ""}
+                  </p>
                 </div>
 
                 {formError && !dismissed && (
@@ -326,14 +399,14 @@ export function JoinForm() {
                   <button
                     type="button"
                     onClick={clearForm}
-                    className="px-6 py-4 rounded-xl border border-black/[0.08] text-[#555] text-sm font-semibold transition-all hover:bg-[#f0f0f0]"
+                    className="px-6 py-4 rounded-xl border border-black/8 text-[#555] text-sm font-semibold transition-all hover:bg-[#f0f0f0]"
                   >
                     Clear
                   </button>
                   <button
                     type="submit"
                     disabled={isPending}
-                    className="flex-1 px-8 py-4 rounded-xl bg-[#111] text-white text-sm font-semibold transition-all hover:shadow-lg disabled:opacity-60 disabled:cursor-not-allowed"
+                    className="flex-1 rounded-xl border-0 bg-[#111] bg-[linear-gradient(#f0f0f0,#f0f0f0)] bg-size-[0%_100%] bg-left bg-no-repeat px-8 py-4 text-sm font-semibold text-white transition-[background-size,color] duration-300 ease-out enabled:hover:bg-size-[100%_100%] enabled:hover:text-[#111] disabled:cursor-not-allowed disabled:opacity-60"
                   >
                     {isPending ? "Sending..." : "Submit Application"}
                   </button>

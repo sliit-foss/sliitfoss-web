@@ -12,9 +12,11 @@ export function BlogListing() {
           {blogPosts.map((post, i) => (
             <FadeUp key={post.slug} delay={i * 0.08}>
               <Link href={`/blog/${post.slug}`} className="group block">
-                <article className="rounded-2xl overflow-hidden border border-black/[0.04] bg-white transition-all duration-300 hover:border-black/[0.08] hover:shadow-lg">
+                <article className="rounded-2xl overflow-hidden border border-black/4 bg-white transition-all duration-300 hover:border-black/8 hover:shadow-lg">
                   <div className={`h-48 relative bg-gradient-to-br ${post.gradient}`}>
-                    <span className={`absolute bottom-3 left-3 text-[0.6rem] font-semibold px-3 py-1.5 rounded-full ${post.tagBg} uppercase tracking-wider`}>
+                    <span
+                      className={`absolute bottom-3 left-3 text-[0.6rem] font-semibold px-3 py-1.5 rounded-full ${post.tagBg} uppercase tracking-wider`}
+                    >
                       {post.tags[0]}
                     </span>
                   </div>
@@ -22,11 +24,11 @@ export function BlogListing() {
                     <h3 className="font-heading text-base font-semibold tracking-[-0.3px] leading-snug mb-2 text-[#111] group-hover:text-[#999] transition-colors">
                       {post.title}
                     </h3>
-                    <p className="text-xs text-[#999] mb-3 line-clamp-2">
-                      {post.description}
-                    </p>
+                    <p className="text-xs text-[#999] mb-3 line-clamp-2">{post.description}</p>
                     <div className="flex items-center justify-between text-[0.7rem] text-[#bbb]">
-                      <span>{post.readTime} · {formatBlogDate(post.date)}</span>
+                      <span>
+                        {post.readTime} · {formatBlogDate(post.date)}
+                      </span>
                     </div>
                   </div>
                 </article>

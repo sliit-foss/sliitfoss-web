@@ -9,7 +9,7 @@ import { submitContact } from "./actions";
 import { initialFormState } from "@/lib/mail/schemas";
 
 const inputClass =
-  "w-full px-4 py-3 rounded-xl border border-black/[0.06] bg-white text-[#111] text-sm focus:outline-none focus:ring-2 focus:ring-[#999]/20 focus:border-[#999] transition-all";
+  "w-full px-4 py-3 rounded-xl border border-black/6 bg-white text-[#111] text-sm focus:outline-none focus:ring-2 focus:ring-[#999]/20 focus:border-[#999] transition-all";
 
 export function ContactForm() {
   const [state, formAction, isPending] = useActionState(submitContact, initialFormState);
@@ -24,7 +24,7 @@ export function ContactForm() {
           <FormTransition
             state={isSuccess ? "success" : "form"}
             success={
-              <div className="rounded-2xl border border-black/[0.04] bg-white p-10">
+              <div className="rounded-2xl border border-black/4 bg-white p-10">
                 <FormSuccess icon="✉️" title="Message sent" description={state.ok === true ? state.message : ""} />
               </div>
             }

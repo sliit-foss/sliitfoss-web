@@ -13,13 +13,9 @@ export function AboutContent() {
         <Stagger className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
           {siteConfig.stats.map((stat) => (
             <StaggerItem key={stat.label}>
-              <div className="text-center p-6 rounded-2xl border border-black/[0.04] bg-[#fafafa]">
-                <div className="font-heading text-3xl md:text-4xl font-bold text-gradient mb-1">
-                  {stat.value}
-                </div>
-                <div className="text-[0.75rem] text-[#999] uppercase tracking-widest">
-                  {stat.label}
-                </div>
+              <div className="text-center p-6 rounded-2xl border border-black/4 bg-[#fafafa]">
+                <div className="font-heading text-3xl md:text-4xl font-bold text-gradient mb-1">{stat.value}</div>
+                <div className="text-[0.75rem] text-[#999] uppercase tracking-widest">{stat.label}</div>
               </div>
             </StaggerItem>
           ))}
@@ -38,7 +34,7 @@ export function AboutContent() {
                 <div className="flex gap-6 pb-10 relative">
                   {/* Timeline line */}
                   {i < aboutContent.milestones.length - 1 && (
-                    <div className="absolute left-[23px] top-10 w-px h-full bg-black/[0.06]" />
+                    <div className="absolute left-[23px] top-10 w-px h-full bg-black/6" />
                   )}
                   {/* Dot */}
                   <div className="w-[48px] shrink-0 flex flex-col items-center">
@@ -65,14 +61,10 @@ export function AboutContent() {
           <Stagger className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {aboutContent.activities.map((activity) => (
               <StaggerItem key={activity.title}>
-                <div className="p-8 rounded-2xl border border-black/[0.04] bg-[#fafafa] hover:border-black/[0.08] hover:shadow-sm transition-all">
+                <div className="p-8 rounded-2xl border border-black/4 bg-[#fafafa] hover:border-black/8 hover:shadow-sm transition-all">
                   <div className="text-3xl mb-4">{activity.icon}</div>
-                  <div className="font-heading text-lg font-semibold text-[#111] mb-2">
-                    {activity.title}
-                  </div>
-                  <div className="text-sm text-[#777] leading-relaxed">
-                    {activity.description}
-                  </div>
+                  <div className="font-heading text-lg font-semibold text-[#111] mb-2">{activity.title}</div>
+                  <div className="text-sm text-[#777] leading-relaxed">{activity.description}</div>
                 </div>
               </StaggerItem>
             ))}
