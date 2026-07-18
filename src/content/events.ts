@@ -20,6 +20,7 @@ export interface Event {
   speakers: Speaker[];
   schedule: ScheduleItem[];
   registrationUrl?: string;
+  banner?: string;
   status: "upcoming" | "completed" | "cancelled";
   color: {
     bg: string;
@@ -44,7 +45,7 @@ export const events: Event[] = [
     speakers: [
       { name: "Dilshan Fernando", role: "Lead Organizer" },
       { name: "Kavitha Perera", role: "Industry Mentor, WSO2" },
-      { name: "Ravindu Silva", role: "Industry Mentor, IFS" },
+      { name: "Ravindu Silva", role: "Industry Mentor, IFS" }
     ],
     schedule: [
       { time: "08:00", title: "Registration & Breakfast" },
@@ -54,16 +55,16 @@ export const events: Event[] = [
       { time: "18:00", title: "Dinner & Lightning Talks" },
       { time: "09:00", title: "Hacking Ends (Day 2)" },
       { time: "10:00", title: "Presentations & Judging" },
-      { time: "12:00", title: "Awards Ceremony" },
+      { time: "12:00", title: "Awards Ceremony" }
     ],
     registrationUrl: "https://forms.google.com/hackfoss2026",
-    status: "upcoming",
+    status: "completed",
     color: {
       bg: "bg-gradient-to-br from-indigo-50 to-blue-100",
       accent: "text-indigo-600",
       borderHover: "hover:border-indigo-200",
-      shape: "bg-indigo-200/40",
-    },
+      shape: "bg-indigo-200/40"
+    }
   },
   {
     slug: "git-workshop",
@@ -77,50 +78,53 @@ export const events: Event[] = [
     venue: "SLIIT Lab 3, Malabe",
     speakers: [
       { name: "Thisara Jayawardena", role: "Workshop Lead" },
-      { name: "Sachini Dissanayake", role: "Assistant Lead" },
+      { name: "Sachini Dissanayake", role: "Assistant Lead" }
     ],
     schedule: [
       { time: "14:00", title: "Setup & Introduction" },
       { time: "14:30", title: "Git Basics: init, add, commit" },
       { time: "15:30", title: "Branching & Merging" },
       { time: "16:30", title: "Your First Pull Request" },
-      { time: "17:30", title: "Q&A & Wrap Up" },
+      { time: "17:30", title: "Q&A & Wrap Up" }
     ],
     registrationUrl: "https://forms.google.com/git-workshop",
-    status: "upcoming",
+    status: "completed",
     color: {
       bg: "bg-gradient-to-br from-teal-50 to-cyan-100",
       accent: "text-teal-600",
       borderHover: "hover:border-teal-200",
-      shape: "bg-teal-200/40",
-    },
+      shape: "bg-teal-200/40"
+    }
   },
   {
-    slug: "rust-beginners",
-    name: "Rust for Beginners",
-    date: "2026-05-26",
-    type: "tech-talk",
+    slug: "build-with-ai-2026",
+    name: "Build with AI 2026 – SLIIT Buildathon",
+    date: "2026-07-21",
+    type: "hackathon",
     description:
-      "Curious about Rust? This talk covers why Rust is taking over systems programming, its ownership model, and how to write your first Rust program. We'll walk through practical examples and show you how Rust prevents entire classes of bugs at compile time. No prior Rust experience needed — just curiosity.",
+      "Registrations are now open! Ready to build with AI, collaborate with like-minded innovators, and experience an exciting day of learning and creating? Build with AI 2026 – SLIIT Buildathon is here, brought to you by Software Engineering Student Community and SLIIT FOSS Community in collaboration with GDG Sri Lanka. Limited slots available — registration will close once all seats are filled. Don't miss your chance to be part of something extraordinary.",
     shortDescription:
-      "A gentle introduction to the language taking over systems programming. No prior Rust experience needed.",
-    venue: "SLIIT Auditorium B, Malabe",
+      "Build with AI at SLIIT. Collaborate, learn, and create with SESC, SLIIT FOSS, and GDG Sri Lanka. Registrations open — limited slots!",
+    venue: "F1402, New Building, SLIIT Malabe",
     speakers: [
-      { name: "Naveen Bandara", role: "Speaker" },
+      { name: "Software Engineering Student Community", role: "Organizer" },
+      { name: "SLIIT FOSS Community", role: "Organizer" },
+      { name: "GDG Sri Lanka", role: "Collaborator" }
     ],
     schedule: [
-      { time: "16:00", title: "Why Rust?" },
-      { time: "16:30", title: "Ownership & Borrowing" },
-      { time: "17:00", title: "Live Coding: A CLI Tool" },
-      { time: "17:30", title: "Q&A" },
+      { time: "10:00", title: "Registration & Welcome" },
+      { time: "10:30", title: "Buildathon Kickoff" },
+      { time: "14:00", title: "Wrap Up" }
     ],
+    registrationUrl: "https://gdg.community.dev/e/m92ruv/",
+    banner: "/events/build-with-ai-2026/image.png",
     status: "upcoming",
     color: {
-      bg: "bg-gradient-to-br from-orange-50 to-amber-100",
-      accent: "text-orange-600",
-      borderHover: "hover:border-orange-200",
-      shape: "bg-orange-200/40",
-    },
+      bg: "bg-gradient-to-br from-violet-50 to-purple-100",
+      accent: "text-violet-600",
+      borderHover: "hover:border-violet-200",
+      shape: "bg-violet-200/40"
+    }
   },
   {
     slug: "docker-101",
@@ -131,31 +135,43 @@ export const events: Event[] = [
       "Hands-on introduction to Docker. Learn containerization, Dockerfiles, images, volumes, and docker-compose. By the end, you'll deploy a full-stack app in containers.",
     shortDescription: "Learn Docker from scratch. Containerize and deploy a full-stack app.",
     venue: "SLIIT Lab 2, Malabe",
-    speakers: [
-      { name: "Kavindu Ratnayake", role: "Workshop Lead" },
-    ],
+    speakers: [{ name: "Kavindu Ratnayake", role: "Workshop Lead" }],
     schedule: [
       { time: "14:00", title: "What is Docker?" },
       { time: "14:45", title: "Your First Container" },
       { time: "15:45", title: "Docker Compose" },
-      { time: "16:30", title: "Deploying a Full-Stack App" },
+      { time: "16:30", title: "Deploying a Full-Stack App" }
     ],
     status: "completed",
     color: {
       bg: "bg-gradient-to-br from-blue-50 to-sky-100",
       accent: "text-blue-600",
       borderHover: "hover:border-blue-200",
-      shape: "bg-blue-200/40",
-    },
-  },
+      shape: "bg-blue-200/40"
+    }
+  }
 ];
 
 export function getEventBySlug(slug: string) {
   return events.find((e) => e.slug === slug);
 }
 
+function getEventEndDate(event: Event): Date {
+  return new Date(event.endDate ?? event.date);
+}
+
 export function getUpcomingEvents() {
-  return events.filter((e) => e.status === "upcoming");
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  return events.filter((event) => {
+    if (event.status !== "upcoming") return false;
+
+    const eventEnd = getEventEndDate(event);
+    eventEnd.setHours(23, 59, 59, 999);
+
+    return eventEnd >= today;
+  });
 }
 
 export function getCompletedEvents() {
@@ -174,10 +190,10 @@ export function formatEventDate(date: string, endDate?: string) {
 
 export function eventTypeLabel(type: Event["type"]) {
   const labels: Record<Event["type"], string> = {
-    hackathon: "Hackathon",
-    workshop: "Workshop",
+    "hackathon": "Hackathon",
+    "workshop": "Workshop",
     "tech-talk": "Tech Talk",
-    meetup: "Meetup",
+    "meetup": "Meetup"
   };
   return labels[type];
 }

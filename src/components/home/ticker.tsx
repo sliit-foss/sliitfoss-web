@@ -1,12 +1,4 @@
-const items = [
-  "Hackathons",
-  "Workshops",
-  "Tech Talks",
-  "Open Source",
-  "Community",
-  "Contributions",
-  "Collaboration",
-];
+const items = ["Hackathons", "Workshops", "Tech Talks", "Open Source", "Community", "Contributions", "Collaboration"];
 
 function TickerContent() {
   return (
@@ -26,7 +18,7 @@ function TickerContent() {
 
 export function Ticker() {
   return (
-    <div className="overflow-hidden py-10 border-t border-b border-black/[0.06] bg-[#fafafa]">
+    <div className="overflow-hidden py-10 border-t border-b border-black/6 bg-[#fafafa]">
       <div className="flex gap-0 animate-ticker w-max">
         <TickerContent />
         <TickerContent />

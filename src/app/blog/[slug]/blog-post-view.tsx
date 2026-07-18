@@ -105,7 +105,7 @@ export function BlogPostView({ post }: { post: BlogPost }) {
           </FadeUp>
 
           <FadeUp delay={0.3}>
-            <div className="text-center pt-12 mt-12 border-t border-black/[0.04]">
+            <div className="text-center pt-12 mt-12 border-t border-black/4">
               <Link href="/blog" className="text-sm text-[#999] hover:underline">
                 ← Back to all posts
               </Link>

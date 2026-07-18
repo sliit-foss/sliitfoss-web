@@ -12,24 +12,22 @@ const events = [
     name: "HackFOSS 2026",
     description:
       "24-hour open source hackathon. Build real projects. Win real prizes. Ship real code. 200+ participants, 30+ mentors.",
-    featured: true,
+    featured: true
   },
   {
     slug: "git-workshop",
     date: "May 12, 2026",
     name: "Git & GitHub Workshop",
-    description:
-      "From your first fork to your first pull request. Hands-on, beginner friendly.",
-    featured: false,
+    description: "From your first fork to your first pull request. Hands-on, beginner friendly.",
+    featured: false
   },
   {
-    slug: "rust-beginners",
-    date: "May 26, 2026",
-    name: "Rust for Beginners",
-    description:
-      "A gentle intro to the language taking over systems programming.",
-    featured: false,
-  },
+    slug: "build-with-ai-2026",
+    date: "July 21, 2026",
+    name: "Build with AI 2026 – SLIIT Buildathon",
+    description: "Build with AI at SLIIT. Registrations open — limited slots available!",
+    featured: false
+  }
 ];
 
 export function EventsPreview() {
@@ -43,24 +41,16 @@ export function EventsPreview() {
           <div className="text-[0.65rem] uppercase tracking-[5px] text-indigo-500 font-medium mb-3">
             What&apos;s Next
           </div>
-          <h2 className="font-heading text-3xl md:text-5xl font-bold tracking-[-2px] mb-12">
-            Events
-          </h2>
+          <h2 className="font-heading text-3xl md:text-5xl font-bold tracking-[-2px] mb-12">Events</h2>
         </FadeIn>
 
         <Stagger className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {events.map((event) => (
-            <StaggerItem
-              key={event.slug}
-              className={event.featured ? "md:col-span-2" : ""}
-            >
+            <StaggerItem key={event.slug} className={event.featured ? "md:col-span-2" : ""}>
               <Link href={`/events/${event.slug}`}>
-                <GlassCard
-                  featured={event.featured}
-                  className={event.featured ? "p-10" : ""}
-                >
+                <GlassCard featured={event.featured} className={event.featured ? "p-10" : ""}>
                   {/* Arrow */}
-                  <div className="absolute top-6 right-6 w-8 h-8 rounded-full bg-white/[0.04] border border-white/[0.06] flex items-center justify-center text-sm opacity-30 transition-all group-hover:opacity-80">
+                  <div className="absolute top-6 right-6 w-8 h-8 rounded-full bg-white/4 border border-white/6 flex items-center justify-center text-sm opacity-30 transition-all group-hover:opacity-80">
                     &rarr;
                   </div>
 
@@ -69,16 +59,12 @@ export function EventsPreview() {
                   </div>
                   <div
                     className={`font-heading font-semibold tracking-[-0.5px] mb-2 ${
-                      event.featured
-                        ? "text-2xl md:text-3xl tracking-[-1px]"
-                        : "text-xl"
+                      event.featured ? "text-2xl md:text-3xl tracking-[-1px]" : "text-xl"
                     }`}
                   >
                     {event.name}
                   </div>
-                  <div className="text-[0.85rem] text-white/40 leading-relaxed">
-                    {event.description}
-                  </div>
+                  <div className="text-[0.85rem] text-white/40 leading-relaxed">{event.description}</div>
                 </GlassCard>
               </Link>
             </StaggerItem>

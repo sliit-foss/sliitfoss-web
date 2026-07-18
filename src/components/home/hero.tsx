@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "motion/react";
 import { useEffect, useRef, useState } from "react";
-import { MagneticButton } from "@/components/animations/magnetic-button";
 
 function TypingText({ text, delay = 0 }: { text: string; delay?: number }) {
   const [displayed, setDisplayed] = useState("");
@@ -17,10 +16,7 @@ function TypingText({ text, delay = 0 }: { text: string; delay?: number }) {
   useEffect(() => {
     if (!started) return;
     if (displayed.length >= text.length) return;
-    const timeout = setTimeout(
-      () => setDisplayed(text.slice(0, displayed.length + 1)),
-      30 + Math.random() * 40
-    );
+    const timeout = setTimeout(() => setDisplayed(text.slice(0, displayed.length + 1)), 30 + Math.random() * 40);
     return () => clearTimeout(timeout);
   }, [displayed, started, text]);
 
@@ -39,14 +35,14 @@ const commitMessages = [
   { hash: "7bc9e44", msg: "fix: resolve event date parsing bug", time: "5h ago" },
   { hash: "e1d5f87", msg: "docs: update contribution guidelines", time: "1d ago" },
   { hash: "2ca8b19", msg: "feat: implement blog MDX renderer", time: "2d ago" },
-  { hash: "f9a2c33", msg: "refactor: optimize image pipeline", time: "3d ago" },
+  { hash: "f9a2c33", msg: "refactor: optimize image pipeline", time: "3d ago" }
 ];
 
 export function Hero() {
   const heroRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: heroRef,
-    offset: ["start start", "end start"],
+    offset: ["start start", "end start"]
   });
 
   const textY = useTransform(scrollYProgress, [0, 1], [0, -60]);
@@ -92,8 +88,7 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.25 }}
           >
-            A collective of student developers pushing the boundaries of open
-            source. One commit at a time.
+            A collective of student developers pushing the boundaries of open source. One commit at a time.
           </motion.p>
 
           <motion.div
@@ -102,22 +97,18 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
-            <MagneticButton strength={0.25}>
-              <Link
-                href="/join"
-                className="inline-block px-7 py-3 rounded-lg bg-[#111] text-white text-sm font-semibold transition-all hover:shadow-[0_8px_30px_rgba(0,0,0,0.15)] hover:rounded-2xl duration-300"
-              >
-                Become a Member
-              </Link>
-            </MagneticButton>
-            <MagneticButton strength={0.2}>
-              <Link
-                href="/about"
-                className="inline-block px-7 py-3 rounded-lg bg-white text-[#333] text-sm border border-black/[0.08] transition-all hover:border-black/15 hover:shadow-sm"
-              >
-                See What We Do
-              </Link>
-            </MagneticButton>
+            <Link
+              href="/join"
+              className="inline-flex items-center justify-center rounded-full border-0 bg-[#111] bg-[linear-gradient(#f0f0f0,#f0f0f0)] bg-size-[0%_100%] bg-left bg-no-repeat px-6 py-2.5 text-[0.7rem] font-normal uppercase tracking-wide whitespace-nowrap text-white transition-[background-size,color] duration-300 ease-out hover:bg-size-[100%_100%] hover:text-[#111]"
+            >
+              Become a Member
+            </Link>
+            <Link
+              href="/about"
+              className="inline-flex items-center justify-center rounded-full border border-[#eee] bg-white px-6 py-2.5 text-[0.7rem] font-normal uppercase tracking-wide whitespace-nowrap text-[#333] transition-colors hover:bg-[#f0f0f0]"
+            >
+              See What We Do
+            </Link>
           </motion.div>
         </motion.div>
 
@@ -129,15 +120,13 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.3 }}
           style={{ y: terminalY }}
         >
-          <div className="rounded-xl border border-black/[0.08] bg-white overflow-hidden shadow-[0_8px_40px_rgba(0,0,0,0.06)]">
+          <div className="rounded-xl border border-black/8 bg-white overflow-hidden shadow-[0_8px_40px_rgba(0,0,0,0.06)]">
             {/* Terminal header */}
-            <div className="flex items-center gap-2 px-4 py-3 border-b border-black/[0.06] bg-[#fafafa]">
+            <div className="flex items-center gap-2 px-4 py-3 border-b border-black/6 bg-[#fafafa]">
               <div className="w-3 h-3 rounded-full bg-red-400" />
               <div className="w-3 h-3 rounded-full bg-yellow-400" />
               <div className="w-3 h-3 rounded-full bg-green-400" />
-              <span className="ml-2 text-[0.7rem] text-[#999] font-mono">
-                git log --oneline
-              </span>
+              <span className="ml-2 text-[0.7rem] text-[#999] font-mono">git log --oneline</span>
             </div>
 
             {/* Terminal content */}
@@ -152,14 +141,12 @@ export function Hero() {
                 >
                   <span className="text-yellow-400/80 shrink-0">{commit.hash}</span>
                   <span className="text-white/80 truncate">{commit.msg}</span>
-                  <span className="text-white/30 shrink-0 hidden sm:inline">
-                    {commit.time}
-                  </span>
+                  <span className="text-white/30 shrink-0 hidden sm:inline">{commit.time}</span>
                 </motion.div>
               ))}
 
               <motion.div
-                className="pt-3 border-t border-white/[0.06] mt-3 text-emerald-400/80"
+                className="pt-3 border-t border-white/6 mt-3 text-emerald-400/80"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.5 }}

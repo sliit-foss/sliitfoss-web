@@ -16,11 +16,11 @@ export function GalleryGrid() {
           </p>
         </FadeUp> */}
 
-        <div className="rounded-[2rem] border border-black/[0.05] bg-white p-3 md:p-4 shadow-[0_24px_80px_rgba(17,17,17,0.05)]">
+        <div className="rounded-[2rem] border border-black/5 bg-white p-3 md:p-4 shadow-[0_24px_80px_rgba(17,17,17,0.05)]">
           <Stagger className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-3 md:gap-4" staggerDelay={0.07}>
             {galleryItems.map((item) => (
               <StaggerItem key={item.title} className={item.layout}>
-                <article className="group relative overflow-hidden rounded-[1.6rem] border border-black/[0.04] bg-[#f4f4f4] shadow-[0_20px_50px_rgba(17,17,17,0.08)]">
+                <article className="group relative overflow-hidden rounded-[1.6rem] border border-black/4 bg-[#f4f4f4] shadow-[0_20px_50px_rgba(17,17,17,0.08)]">
                   <div className={`relative w-full ${item.aspectRatio}`}>
                     <Image
                       src={item.image}
