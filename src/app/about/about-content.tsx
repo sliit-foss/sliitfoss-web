@@ -26,7 +26,7 @@ export function AboutContent() {
       <section className="py-20 md:py-28 px-6 bg-[#fafafa]">
         <div className="max-w-3xl mx-auto">
           <WordAnimate className="font-heading text-3xl md:text-4xl font-bold tracking-[-2px] uppercase text-[#111] mb-12">
-            Our Journey
+            Our History
           </WordAnimate>
           <div className="space-y-0">
             {aboutContent.milestones.map((milestone, i) => (
@@ -56,7 +56,7 @@ export function AboutContent() {
       <section className="py-20 md:py-28 px-6 bg-white">
         <div className="max-w-5xl mx-auto">
           <WordAnimate className="font-heading text-3xl md:text-4xl font-bold tracking-[-2px] uppercase text-[#111] mb-12">
-            What We Do
+            Our Activities
           </WordAnimate>
           <Stagger className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {aboutContent.activities.map((activity) => (
