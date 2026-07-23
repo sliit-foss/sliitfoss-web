@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { WordAnimate } from "@/components/animations/word-animate";
 import { FadeUp } from "@/components/animations/fade-up";
-import { MagneticButton } from "@/components/animations/magnetic-button";
 
 export function CTA() {
   return (
