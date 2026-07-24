@@ -1,0 +1,33 @@
+{
+  "slug": "hackfoss-2026",
+  "name": "HackFOSS 2026",
+  "date": "2026-04-28",
+  "endDate": "2026-04-29",
+  "type": "hackathon",
+  "description": "HackFOSS is our flagship 24-hour open source hackathon. Teams of 3-5 build real projects that solve real problems — all open source, all shipped by the end. With 200+ participants, 30+ industry mentors, and prizes worth over LKR 500,000, this is the biggest student hackathon of the year.",
+  "shortDescription": "24-hour open source hackathon. Build real projects. Win real prizes. Ship real code. 200+ participants, 30+ mentors from industry.",
+  "venue": "SLIIT Main Auditorium, Malabe",
+  "speakers": [
+    { "name": "Dilshan Fernando", "role": "Lead Organizer" },
+    { "name": "Kavitha Perera", "role": "Industry Mentor, WSO2" },
+    { "name": "Ravindu Silva", "role": "Industry Mentor, IFS" }
+  ],
+  "schedule": [
+    { "time": "08:00", "title": "Registration & Breakfast" },
+    { "time": "09:00", "title": "Opening Ceremony" },
+    { "time": "10:00", "title": "Hacking Begins" },
+    { "time": "13:00", "title": "Lunch & Mentor Sessions" },
+    { "time": "18:00", "title": "Dinner & Lightning Talks" },
+    { "time": "09:00", "title": "Hacking Ends (Day 2)" },
+    { "time": "10:00", "title": "Presentations & Judging" },
+    { "time": "12:00", "title": "Awards Ceremony" }
+  ],
+  "registrationUrl": "https://forms.google.com/hackfoss2026",
+  "status": "completed",
+  "color": {
+    "bg": "bg-gradient-to-br from-indigo-50 to-blue-100",
+    "accent": "text-indigo-600",
+    "borderHover": "hover:border-indigo-200",
+    "shape": "bg-indigo-200/40"
+  }
+}
