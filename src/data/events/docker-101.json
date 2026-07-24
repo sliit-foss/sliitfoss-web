@@ -1,0 +1,23 @@
+{
+  "slug": "docker-101",
+  "name": "Docker 101",
+  "date": "2025-11-15",
+  "type": "workshop",
+  "description": "Hands-on introduction to Docker. Learn containerization, Dockerfiles, images, volumes, and docker-compose. By the end, you'll deploy a full-stack app in containers.",
+  "shortDescription": "Learn Docker from scratch. Containerize and deploy a full-stack app.",
+  "venue": "SLIIT Lab 2, Malabe",
+  "speakers": [{ "name": "Kavindu Ratnayake", "role": "Workshop Lead" }],
+  "schedule": [
+    { "time": "14:00", "title": "What is Docker?" },
+    { "time": "14:45", "title": "Your First Container" },
+    { "time": "15:45", "title": "Docker Compose" },
+    { "time": "16:30", "title": "Deploying a Full-Stack App" }
+  ],
+  "status": "completed",
+  "color": {
+    "bg": "bg-gradient-to-br from-blue-50 to-sky-100",
+    "accent": "text-blue-600",
+    "borderHover": "hover:border-blue-200",
+    "shape": "bg-blue-200/40"
+  }
+}

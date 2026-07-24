@@ -1,156 +1,60 @@
-export interface Speaker {
-  name: string;
-  role: string;
-}
+import { z } from "zod";
 
-export interface ScheduleItem {
-  time: string;
-  title: string;
-}
+import buildWithAi2026 from "@/data/events/build-with-ai-2026.json";
+import docker101 from "@/data/events/docker-101.json";
+import gitWorkshop from "@/data/events/git-workshop.json";
+import hackfoss2026 from "@/data/events/hackfoss-2026.json";
 
-export interface Event {
-  slug: string;
-  name: string;
-  date: string;
-  endDate?: string;
-  type: "hackathon" | "workshop" | "tech-talk" | "meetup";
-  description: string;
-  shortDescription: string;
-  venue: string;
-  speakers: Speaker[];
-  schedule: ScheduleItem[];
-  registrationUrl?: string;
-  banner?: string;
-  status: "upcoming" | "completed" | "cancelled";
-  color: {
-    bg: string;
-    accent: string;
-    borderHover: string;
-    shape: string;
-  };
-}
+const speakerSchema = z.strictObject({
+  name: z.string().min(1),
+  role: z.string().min(1)
+});
 
-export const events: Event[] = [
-  {
-    slug: "hackfoss-2026",
-    name: "HackFOSS 2026",
-    date: "2026-04-28",
-    endDate: "2026-04-29",
-    type: "hackathon",
-    description:
-      "HackFOSS is our flagship 24-hour open source hackathon. Teams of 3-5 build real projects that solve real problems — all open source, all shipped by the end. With 200+ participants, 30+ industry mentors, and prizes worth over LKR 500,000, this is the biggest student hackathon of the year.",
-    shortDescription:
-      "24-hour open source hackathon. Build real projects. Win real prizes. Ship real code. 200+ participants, 30+ mentors from industry.",
-    venue: "SLIIT Main Auditorium, Malabe",
-    speakers: [
-      { name: "Dilshan Fernando", role: "Lead Organizer" },
-      { name: "Kavitha Perera", role: "Industry Mentor, WSO2" },
-      { name: "Ravindu Silva", role: "Industry Mentor, IFS" }
-    ],
-    schedule: [
-      { time: "08:00", title: "Registration & Breakfast" },
-      { time: "09:00", title: "Opening Ceremony" },
-      { time: "10:00", title: "Hacking Begins" },
-      { time: "13:00", title: "Lunch & Mentor Sessions" },
-      { time: "18:00", title: "Dinner & Lightning Talks" },
-      { time: "09:00", title: "Hacking Ends (Day 2)" },
-      { time: "10:00", title: "Presentations & Judging" },
-      { time: "12:00", title: "Awards Ceremony" }
-    ],
-    registrationUrl: "https://forms.google.com/hackfoss2026",
-    status: "completed",
-    color: {
-      bg: "bg-gradient-to-br from-indigo-50 to-blue-100",
-      accent: "text-indigo-600",
-      borderHover: "hover:border-indigo-200",
-      shape: "bg-indigo-200/40"
-    }
-  },
-  {
-    slug: "git-workshop",
-    name: "Git & GitHub Workshop",
-    date: "2026-05-12",
-    type: "workshop",
-    description:
-      "A beginner-friendly, hands-on workshop covering everything from your first git init to your first merged pull request. You'll learn branching, merging, resolving conflicts, writing good commit messages, and contributing to open source projects on GitHub. Bring your laptop — we'll be coding together.",
-    shortDescription:
-      "From your first fork to your first pull request. Hands-on, guided, and beginner friendly. Open to everyone.",
-    venue: "SLIIT Lab 3, Malabe",
-    speakers: [
-      { name: "Thisara Jayawardena", role: "Workshop Lead" },
-      { name: "Sachini Dissanayake", role: "Assistant Lead" }
-    ],
-    schedule: [
-      { time: "14:00", title: "Setup & Introduction" },
-      { time: "14:30", title: "Git Basics: init, add, commit" },
-      { time: "15:30", title: "Branching & Merging" },
-      { time: "16:30", title: "Your First Pull Request" },
-      { time: "17:30", title: "Q&A & Wrap Up" }
-    ],
-    registrationUrl: "https://forms.google.com/git-workshop",
-    status: "completed",
-    color: {
-      bg: "bg-gradient-to-br from-teal-50 to-cyan-100",
-      accent: "text-teal-600",
-      borderHover: "hover:border-teal-200",
-      shape: "bg-teal-200/40"
-    }
-  },
-  {
-    slug: "build-with-ai-2026",
-    name: "Build with AI 2026 – SLIIT Buildathon",
-    date: "2026-07-21",
-    type: "hackathon",
-    description:
-      "Registrations are now open! Ready to build with AI, collaborate with like-minded innovators, and experience an exciting day of learning and creating? Build with AI 2026 – SLIIT Buildathon is here, brought to you by Software Engineering Student Community and SLIIT FOSS Community in collaboration with GDG Sri Lanka. Limited slots available — registration will close once all seats are filled. Don't miss your chance to be part of something extraordinary.",
-    shortDescription:
-      "Build with AI at SLIIT. Collaborate, learn, and create with SESC, SLIIT FOSS, and GDG Sri Lanka. Registrations open — limited slots!",
-    venue: "F1402, New Building, SLIIT Malabe",
-    speakers: [
-      { name: "Software Engineering Student Community", role: "Organizer" },
-      { name: "SLIIT FOSS Community", role: "Organizer" },
-      { name: "GDG Sri Lanka", role: "Collaborator" }
-    ],
-    schedule: [
-      { time: "10:00", title: "Registration & Welcome" },
-      { time: "10:30", title: "Buildathon Kickoff" },
-      { time: "14:00", title: "Wrap Up" }
-    ],
-    registrationUrl: "https://gdg.community.dev/e/m92ruv/",
-    banner: "/events/build-with-ai-2026/image.png",
-    status: "upcoming",
-    color: {
-      bg: "bg-gradient-to-br from-violet-50 to-purple-100",
-      accent: "text-violet-600",
-      borderHover: "hover:border-violet-200",
-      shape: "bg-violet-200/40"
-    }
-  },
-  {
-    slug: "docker-101",
-    name: "Docker 101",
-    date: "2025-11-15",
-    type: "workshop",
-    description:
-      "Hands-on introduction to Docker. Learn containerization, Dockerfiles, images, volumes, and docker-compose. By the end, you'll deploy a full-stack app in containers.",
-    shortDescription: "Learn Docker from scratch. Containerize and deploy a full-stack app.",
-    venue: "SLIIT Lab 2, Malabe",
-    speakers: [{ name: "Kavindu Ratnayake", role: "Workshop Lead" }],
-    schedule: [
-      { time: "14:00", title: "What is Docker?" },
-      { time: "14:45", title: "Your First Container" },
-      { time: "15:45", title: "Docker Compose" },
-      { time: "16:30", title: "Deploying a Full-Stack App" }
-    ],
-    status: "completed",
-    color: {
-      bg: "bg-gradient-to-br from-blue-50 to-sky-100",
-      accent: "text-blue-600",
-      borderHover: "hover:border-blue-200",
-      shape: "bg-blue-200/40"
-    }
+const scheduleItemSchema = z.strictObject({
+  time: z.string().min(1),
+  title: z.string().min(1)
+});
+
+const eventSchema = z.strictObject({
+  slug: z.string().regex(/^[a-z0-9-]+$/, "Slug must be lowercase, digits and dashes only"),
+  name: z.string().min(1),
+  date: z.iso.date(),
+  endDate: z.iso.date().optional(),
+  type: z.enum(["hackathon", "workshop", "tech-talk", "meetup"]),
+  description: z.string().min(1),
+  shortDescription: z.string().min(1),
+  venue: z.string().min(1),
+  speakers: z.array(speakerSchema),
+  schedule: z.array(scheduleItemSchema),
+  registrationUrl: z.string().url().optional(),
+  banner: z.string().startsWith("/", "Banner must be a path under public/").optional(),
+  status: z.enum(["upcoming", "completed", "cancelled"]),
+  color: z.strictObject({
+    bg: z.string().min(1),
+    accent: z.string().min(1),
+    borderHover: z.string().min(1),
+    shape: z.string().min(1)
+  })
+});
+
+export type Speaker = z.infer<typeof speakerSchema>;
+export type ScheduleItem = z.infer<typeof scheduleItemSchema>;
+export type Event = z.infer<typeof eventSchema>;
+
+/**
+ * Event data lives in `src/data/events/<slug>.json`, that folder is the source of truth.
+ * To add an event: create the JSON file, then import and register it below.
+ * Order here is the order events render in.
+ */
+const eventSources: unknown[] = [hackfoss2026, gitWorkshop, buildWithAi2026, docker101];
+
+export const events: Event[] = eventSources.map((source, index) => {
+  const parsed = eventSchema.safeParse(source);
+  if (!parsed.success) {
+    throw new Error(`Invalid event data at src/data/events (entry ${index}): ${z.prettifyError(parsed.error)}`);
   }
-];
+  return parsed.data;
+});
 
 export function getEventBySlug(slug: string) {
   return events.find((e) => e.slug === slug);

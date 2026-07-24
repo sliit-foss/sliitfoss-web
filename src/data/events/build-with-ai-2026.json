@@ -1,0 +1,28 @@
+{
+  "slug": "build-with-ai-2026",
+  "name": "Build with AI 2026 – SLIIT Buildathon",
+  "date": "2026-07-21",
+  "type": "hackathon",
+  "description": "Registrations are now open! Ready to build with AI, collaborate with like-minded innovators, and experience an exciting day of learning and creating? Build with AI 2026 – SLIIT Buildathon is here, brought to you by Software Engineering Student Community and SLIIT FOSS Community in collaboration with GDG Sri Lanka. Limited slots available — registration will close once all seats are filled. Don't miss your chance to be part of something extraordinary.",
+  "shortDescription": "Build with AI at SLIIT. Collaborate, learn, and create with SESC, SLIIT FOSS, and GDG Sri Lanka. Registrations open — limited slots!",
+  "venue": "F1402, New Building, SLIIT Malabe",
+  "speakers": [
+    { "name": "Software Engineering Student Community", "role": "Organizer" },
+    { "name": "SLIIT FOSS Community", "role": "Organizer" },
+    { "name": "GDG Sri Lanka", "role": "Collaborator" }
+  ],
+  "schedule": [
+    { "time": "10:00", "title": "Registration & Welcome" },
+    { "time": "10:30", "title": "Buildathon Kickoff" },
+    { "time": "14:00", "title": "Wrap Up" }
+  ],
+  "registrationUrl": "https://gdg.community.dev/e/m92ruv/",
+  "banner": "/events/build-with-ai-2026/image.png",
+  "status": "upcoming",
+  "color": {
+    "bg": "bg-gradient-to-br from-violet-50 to-purple-100",
+    "accent": "text-violet-600",
+    "borderHover": "hover:border-violet-200",
+    "shape": "bg-violet-200/40"
+  }
+}
