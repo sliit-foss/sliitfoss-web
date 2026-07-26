@@ -23,7 +23,14 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: "SLIIT FOSS | Build. Share. Contribute.",
-  description: "A community of volunteers who believe in the power of Free & Open Source Software."
+  description: "A community of volunteers who believe in the power of Free & Open Source Software.",
+  icons: {
+    icon: [
+      { url: "/icons/icon-dark.png", type: "image/png", sizes: "48x48" },
+      { url: "/icons/icon-light.png", type: "image/png", sizes: "48x48", media: "(prefers-color-scheme: dark)" }
+    ],
+    apple: [{ url: "/icons/apple-icon.png", sizes: "180x180" }]
+  }
 };
 
 export default function RootLayout({
