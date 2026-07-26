@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { siteConfig } from "@/content/site";
 
 const navColumns = [
   {
@@ -15,10 +16,10 @@ const navColumns = [
   {
     title: "Connect",
     links: [
-      { href: "https://github.com/sliitfoss", label: "GitHub" },
-      { href: "#", label: "LinkedIn" },
-      { href: "#", label: "Discord" },
-      { href: "#", label: "Twitter/X" }
+      { href: siteConfig.socials.github, label: "GitHub" },
+      { href: siteConfig.socials.linkedin, label: "LinkedIn" },
+      { href: siteConfig.socials.discord, label: "Discord" },
+      { href: siteConfig.socials.twitter, label: "Twitter/X" }
     ]
   },
   {

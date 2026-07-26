@@ -9,8 +9,8 @@ export const siteConfig = {
   },
   whatsappGroup: "https://chat.whatsapp.com/D2R64rOaXvED98XgvJxTXn",
   socials: {
-    github: "https://github.com/sliitfoss",
-    linkedin: "https://linkedin.com/company/sliitfoss",
+    github: "https://github.com/sliit-foss",
+    linkedin: "https://www.linkedin.com/company/sliit-foss-community",
     discord: "https://discord.gg/sliitfoss",
     twitter: "https://twitter.com/sliitfoss"
   },
