@@ -9,15 +9,17 @@ export const siteConfig = {
   },
   whatsappGroup: "https://chat.whatsapp.com/D2R64rOaXvED98XgvJxTXn",
   socials: {
-    github: "https://github.com/sliit-foss",
-    linkedin: "https://www.linkedin.com/company/sliit-foss-community",
-    discord: "https://discord.gg/sliitfoss",
-    twitter: "https://twitter.com/sliitfoss"
-  },
-  contact: {
-    email: "foss@sliit.lk",
-    location: "SLIIT, Malabe, Sri Lanka"
-  },
+  github: "https://github.com/sliit-foss",
+  linkedin: "https://www.linkedin.com/company/sliit-foss-community",
+  instagram: "https://www.instagram.com/sliitfoss/",
+  facebook: "https://www.facebook.com/sliitfoss",
+  x: "https://x.com/fosssliit"
+},
+contact: {
+  email: "infosliitfoss@gmail.com",
+  phone: "+94 76 726 8555",
+  location: "SLIIT, Malabe, Sri Lanka"
+},
   stats: [
     { value: "500+", label: "Members" },
     { value: "50+", label: "Events Held" },

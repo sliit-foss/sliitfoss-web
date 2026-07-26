@@ -105,8 +105,17 @@ export function ContactForm() {
           <div className="space-y-8">
             <div>
               <div className="text-xs font-medium text-[#bbb] uppercase tracking-wider mb-2">Email</div>
-              <a href={`mailto:${siteConfig.contact.email}`} className="text-sm text-[#999] hover:underline">
+              <a href={`mailto:${siteConfig.contact.email}`} className="text-sm text-[#555] hover:underline">
                 {siteConfig.contact.email}
+              </a>
+            </div>
+            <div>
+              <div className="text-xs font-medium text-[#bbb] uppercase tracking-wider mb-2">Phone</div>
+              <a
+                href={`tel:${siteConfig.contact.phone.replace(/\s/g, "")}`}
+                className="text-sm text-[#555] hover:underline"
+              >
+                {siteConfig.contact.phone}
               </a>
             </div>
             <div>

@@ -18,8 +18,9 @@ const navColumns = [
     links: [
       { href: siteConfig.socials.github, label: "GitHub" },
       { href: siteConfig.socials.linkedin, label: "LinkedIn" },
-      { href: siteConfig.socials.discord, label: "Discord" },
-      { href: siteConfig.socials.twitter, label: "Twitter/X" }
+      { href: siteConfig.socials.instagram, label: "Instagram" },
+      { href: siteConfig.socials.facebook, label: "Facebook" },
+      { href: siteConfig.socials.x, label: "X" }
     ]
   },
   {
