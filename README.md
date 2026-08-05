@@ -55,3 +55,38 @@ pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result. You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+
+## PR & Commit Guidelines for SLIIT-FOSS
+
+**1. Title**  
+Short, describes the change, starts with a capitalized type:  
+`Feat:`, `Fix:`, `Docs:`, `Chore:`, `Refactor:`, `Style:`
+
+- ✅ `Feat: customize become-member button`
+- ❌ `Feature/member button customize`
+
+_Note: Our commitlint requires a capitalized type — `lowercase feat:` will be rejected._
+
+**2. Link the issue**  
+Put `Closes #<number>` in the PR description so it's tracked and auto-closes once merged.
+
+**3. Branch from `dev`, target `dev`**
+
+```bash
+git fetch upstream
+git checkout -b feat/my-change upstream/dev
+```
+
+This keeps your diff to only your changes — no unrelated files.
+
+**4. One PR = One thing**  
+Keep it focused. Don't bundle unrelated changes.
+
+**5. Fill the PR template**  
+Complete the PR template and add a screenshot for any UI change.
+
+**6. Test locally before pushing**
+
+```bash
+pnpm dev
+```
