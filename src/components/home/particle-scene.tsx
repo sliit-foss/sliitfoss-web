@@ -26,7 +26,7 @@ export function ParticleScene() {
 
     const renderer = new THREE.WebGLRenderer({
       alpha: true,
-      antialias: true,
+      antialias: true
     });
     renderer.setSize(width, height);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
@@ -38,18 +38,10 @@ export function ParticleScene() {
 
     for (let i = 0; i < PARTICLE_COUNT; i++) {
       positions.push(
-        new THREE.Vector3(
-          (Math.random() - 0.5) * 14,
-          (Math.random() - 0.5) * 10,
-          (Math.random() - 0.5) * 6
-        )
+        new THREE.Vector3((Math.random() - 0.5) * 14, (Math.random() - 0.5) * 10, (Math.random() - 0.5) * 6)
       );
       velocities.push(
-        new THREE.Vector3(
-          (Math.random() - 0.5) * 0.008,
-          (Math.random() - 0.5) * 0.008,
-          (Math.random() - 0.5) * 0.004
-        )
+        new THREE.Vector3((Math.random() - 0.5) * 0.008, (Math.random() - 0.5) * 0.008, (Math.random() - 0.5) * 0.004)
       );
     }
 
@@ -63,7 +55,7 @@ export function ParticleScene() {
       size: 0.06,
       transparent: true,
       opacity: 0.8,
-      sizeAttenuation: true,
+      sizeAttenuation: true
     });
     const points = new THREE.Points(pointsGeo, pointsMat);
     scene.add(points);
@@ -79,7 +71,7 @@ export function ParticleScene() {
     const lineMat = new THREE.LineBasicMaterial({
       vertexColors: true,
       transparent: true,
-      opacity: 0.35,
+      opacity: 0.35
     });
     const lines = new THREE.LineSegments(lineGeo, lineMat);
     scene.add(lines);
@@ -103,6 +95,10 @@ export function ParticleScene() {
     container.addEventListener("mousemove", onMouseMove);
     container.addEventListener("mouseleave", onMouseLeave);
 
+    const indigo = new THREE.Color(0x6366f1);
+    const cyan = new THREE.Color(0x06b6d4);
+    const scratchColor = new THREE.Color();
+
     // Animate
     function animate() {
       rafRef.current = requestAnimationFrame(animate);
@@ -122,7 +118,7 @@ export function ParticleScene() {
           const dy = p.y - mouseWorld.y;
           const dist = Math.sqrt(dx * dx + dy * dy);
           if (dist < MOUSE_INFLUENCE) {
-            const force = (MOUSE_INFLUENCE - dist) / MOUSE_INFLUENCE * 0.02;
+            const force = ((MOUSE_INFLUENCE - dist) / MOUSE_INFLUENCE) * 0.02;
             v.x += dx * force * 0.3;
             v.y += dy * force * 0.3;
           }
@@ -147,15 +143,14 @@ export function ParticleScene() {
 
       // Update connections
       let lineIndex = 0;
-      const indigo = new THREE.Color(0x6366f1);
-      const cyan = new THREE.Color(0x06b6d4);
 
       for (let i = 0; i < PARTICLE_COUNT; i++) {
         for (let j = i + 1; j < PARTICLE_COUNT; j++) {
           const dist = positions[i].distanceTo(positions[j]);
           if (dist < CONNECTION_DISTANCE && lineIndex < maxLines) {
             const alpha = 1 - dist / CONNECTION_DISTANCE;
-            const color = indigo.clone().lerp(cyan, alpha);
+
+            scratchColor.copy(indigo).lerp(cyan, alpha);
 
             const idx = lineIndex * 6;
             linePositions[idx] = positions[i].x;
@@ -165,12 +160,12 @@ export function ParticleScene() {
             linePositions[idx + 4] = positions[j].y;
             linePositions[idx + 5] = positions[j].z;
 
-            lineColors[idx] = color.r * alpha;
-            lineColors[idx + 1] = color.g * alpha;
-            lineColors[idx + 2] = color.b * alpha;
-            lineColors[idx + 3] = color.r * alpha;
-            lineColors[idx + 4] = color.g * alpha;
-            lineColors[idx + 5] = color.b * alpha;
+            lineColors[idx] = scratchColor.r * alpha;
+            lineColors[idx + 1] = scratchColor.g * alpha;
+            lineColors[idx + 2] = scratchColor.b * alpha;
+            lineColors[idx + 3] = scratchColor.r * alpha;
+            lineColors[idx + 4] = scratchColor.g * alpha;
+            lineColors[idx + 5] = scratchColor.b * alpha;
 
             lineIndex++;
           }
@@ -209,11 +204,5 @@ export function ParticleScene() {
     };
   }, []);
 
-  return (
-    <div
-      ref={containerRef}
-      className="absolute inset-0 z-0"
-      aria-hidden="true"
-    />
-  );
+  return <div ref={containerRef} className="absolute inset-0 z-0" aria-hidden="true" />;
 }
