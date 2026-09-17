@@ -7,7 +7,7 @@ export default function AboutPage() {
     <>
       <PageHeader
         label="Who We Are"
-        title="About SLIIT FOSS"
+        title="About SLIIT FOSS Club"
         subtitle={aboutContent.mission}
       />
       <AboutContent />
