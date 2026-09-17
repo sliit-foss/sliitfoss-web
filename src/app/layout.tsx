@@ -22,7 +22,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "SLIIT FOSS | Build. Share. Contribute.",
+  title: { default: "SLIIT FOSS | Build. Share. Contribute.", template: "%s | SLIIT FOSS" },
   description: "A community of volunteers who believe in the power of Free & Open Source Software.",
   icons: {
     icon: [
