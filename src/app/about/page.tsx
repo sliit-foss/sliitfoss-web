@@ -4,14 +4,14 @@ import { aboutContent } from "@/content/site";
 import { AboutContent } from "./about-content";
 
 export const metadata: Metadata = {
-  title: "About SLIIT FOSS",
+  title: "About",
   description: aboutContent.mission
 };
 
 export default function AboutPage() {
   return (
     <>
-      <PageHeader label="Who We Are" title={metadata.title as string} subtitle={aboutContent.mission} />
+      <PageHeader label="Who We Are" title="About SLIIT FOSS" subtitle={aboutContent.mission} />
       <AboutContent />
     </>
   );
