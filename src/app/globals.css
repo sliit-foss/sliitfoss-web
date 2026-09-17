@@ -158,6 +158,16 @@
   animation: ticker-scroll 25s linear infinite;
 }
 
+.animate-ticker:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-ticker {
+    animation: none;
+  }
+}
+
 @keyframes float {
   0%,
   100% {
