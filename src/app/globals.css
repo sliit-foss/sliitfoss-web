@@ -83,7 +83,7 @@
     @apply bg-[#fafafa] text-[#111];
   }
   html {
-    @apply font-sans scroll-smooth;
+    @apply font-sans;
   }
 }
 

@@ -4,6 +4,7 @@ import "./globals.css";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { MaintenanceBanner } from "@/components/layout/maintenance-banner";
+import { LenisProvider } from "@/components/providers/lenis-provider";
 import { siteConfig } from "@/content/site";
 
 const inter = Inter({
@@ -47,10 +48,12 @@ export default function RootLayout({
             <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G" />
           </filter>
         </svg>
-        <MaintenanceBanner />
-        <Navbar />
-        <main className={siteConfig.maintenance.enabled ? "pt-9" : undefined}>{children}</main>
-        <Footer />
+        <LenisProvider>
+          <MaintenanceBanner />
+          <Navbar />
+          <main className={siteConfig.maintenance.enabled ? "pt-9" : undefined}>{children}</main>
+          <Footer />
+        </LenisProvider>
       </body>
     </html>
   );
