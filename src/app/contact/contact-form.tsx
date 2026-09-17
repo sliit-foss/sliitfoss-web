@@ -30,6 +30,14 @@ export function ContactForm() {
             }
             form={
               <form action={formAction} className="space-y-5" noValidate>
+                <input
+                  type="text"
+                  name="nickname"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  aria-hidden="true"
+                  className="absolute -left-[9999px] w-px h-px opacity-0"
+                />
                 <div>
                   <label
                     htmlFor="contact-name"
