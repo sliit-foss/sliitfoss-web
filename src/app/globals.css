@@ -97,7 +97,9 @@
 
 .liquid-glass::after {
   content: "";
-  -webkit-backdrop-filter: blur(14px); /* Increased blur instead of SVG filter if not using an advanced SVG map, but let's keep their filter for exact matching */
+  -webkit-backdrop-filter: blur(
+    14px
+  ); /* Increased blur instead of SVG filter if not using an advanced SVG map, but let's keep their filter for exact matching */
   backdrop-filter: blur(14px);
   filter: url("#displacementFilter");
   isolation: isolate;
@@ -114,14 +116,23 @@
 .liquid-glass::before {
   content: "";
   z-index: 1;
-  background: linear-gradient(160deg, rgba(255,255,255,0.9) 0%, rgba(122,122,122,0.2) 45% 55%, rgba(255,255,255,0.9) 100%);
+  background: linear-gradient(
+    160deg,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(122, 122, 122, 0.2) 45% 55%,
+    rgba(255, 255, 255, 0.9) 100%
+  );
   border-radius: inherit;
   padding: 1px;
   position: absolute;
   inset: 0;
-  -webkit-mask: linear-gradient(#000 0 0), linear-gradient(#000 0 0) content-box;
+  -webkit-mask:
+    linear-gradient(#000 0 0),
+    linear-gradient(#000 0 0) content-box;
   -webkit-mask-composite: xor;
-  mask: linear-gradient(#000 0 0) exclude, linear-gradient(#000 0 0) content-box;
+  mask:
+    linear-gradient(#000 0 0) exclude,
+    linear-gradient(#000 0 0) content-box;
   pointer-events: none;
 }
 
@@ -135,31 +146,55 @@
 
 /* Ticker animation */
 @keyframes ticker-scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .animate-ticker {
   animation: ticker-scroll 25s linear infinite;
 }
 
-/* Floating orb animation */
 @keyframes float {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(30px, -20px) scale(1.05); }
-  66% { transform: translate(-20px, 15px) scale(0.95); }
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, -20px) scale(1.05);
+  }
+  66% {
+    transform: translate(-20px, 15px) scale(0.95);
+  }
 }
 
 .animate-float {
   animation: float 8s ease-in-out infinite;
 }
 
-/* Bobbing scroll hint */
 @keyframes bob {
-  0%, 100% { transform: translateX(-50%) translateY(0); }
-  50% { transform: translateX(-50%) translateY(8px); }
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(8px);
+  }
 }
 
 .animate-bob {
   animation: bob 2s ease-in-out infinite;
+}
+
+.journey-drag-scroll {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  touch-action: pan-y;
+}
+
+.journey-drag-scroll::-webkit-scrollbar {
+  display: none;
 }
