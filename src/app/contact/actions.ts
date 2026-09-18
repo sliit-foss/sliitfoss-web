@@ -1,9 +1,14 @@
 "use server";
 
+import { isSpam } from "@/lib/spam";
 import { contactSchema, type FormState } from "@/lib/mail/schemas";
 import { sendContactEmail } from "@/lib/mail/resend";
 
 export async function submitContact(_prev: FormState, formData: FormData): Promise<FormState> {
+  if (await isSpam(formData)) {
+    return { ok: true, message: "Thanks!" };
+  }
+
   const parsed = contactSchema.safeParse({
     name: formData.get("name"),
     email: formData.get("email"),

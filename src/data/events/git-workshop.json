@@ -1,0 +1,28 @@
+{
+  "slug": "git-workshop",
+  "name": "Git & GitHub Workshop",
+  "date": "2026-05-12",
+  "type": "workshop",
+  "description": "A beginner-friendly, hands-on workshop covering everything from your first git init to your first merged pull request. You'll learn branching, merging, resolving conflicts, writing good commit messages, and contributing to open source projects on GitHub. Bring your laptop — we'll be coding together.",
+  "shortDescription": "From your first fork to your first pull request. Hands-on, guided, and beginner friendly. Open to everyone.",
+  "venue": "SLIIT Lab 3, Malabe",
+  "speakers": [
+    { "name": "Thisara Jayawardena", "role": "Workshop Lead" },
+    { "name": "Sachini Dissanayake", "role": "Assistant Lead" }
+  ],
+  "schedule": [
+    { "time": "14:00", "title": "Setup & Introduction" },
+    { "time": "14:30", "title": "Git Basics: init, add, commit" },
+    { "time": "15:30", "title": "Branching & Merging" },
+    { "time": "16:30", "title": "Your First Pull Request" },
+    { "time": "17:30", "title": "Q&A & Wrap Up" }
+  ],
+  "registrationUrl": "https://forms.google.com/git-workshop",
+  "status": "completed",
+  "color": {
+    "bg": "bg-gradient-to-br from-teal-50 to-cyan-100",
+    "accent": "text-teal-600",
+    "borderHover": "hover:border-teal-200",
+    "shape": "bg-teal-200/40"
+  }
+}

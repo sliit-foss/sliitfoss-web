@@ -96,6 +96,14 @@ export function JoinForm() {
             }
             form={
               <form action={formAction} onSubmit={() => setDismissed(false)} className="space-y-6" noValidate>
+                <input
+                  type="text"
+                  name="nickname"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  aria-hidden="true"
+                  className="absolute -left-[9999px] w-px h-px opacity-0"
+                />
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label htmlFor="join-name" className={labelClass}>

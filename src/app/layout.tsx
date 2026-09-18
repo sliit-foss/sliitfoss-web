@@ -4,6 +4,7 @@ import "./globals.css";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { MaintenanceBanner } from "@/components/layout/maintenance-banner";
+import { LenisProvider } from "@/components/providers/lenis-provider";
 import { siteConfig } from "@/content/site";
 
 const inter = Inter({
@@ -22,8 +23,15 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "SLIIT FOSS | Build. Share. Contribute.",
-  description: "A community of volunteers who believe in the power of Free & Open Source Software."
+  title: { default: "SLIIT FOSS | Build. Share. Contribute.", template: "%s | SLIIT FOSS" },
+  description: "A community of volunteers who believe in the power of Free & Open Source Software.",
+  icons: {
+    icon: [
+      { url: "/icons/icon-dark.png", type: "image/png", sizes: "48x48" },
+      { url: "/icons/icon-light.png", type: "image/png", sizes: "48x48", media: "(prefers-color-scheme: dark)" }
+    ],
+    apple: [{ url: "/icons/apple-icon.png", sizes: "180x180" }]
+  }
 };
 
 export default function RootLayout({
@@ -40,10 +48,12 @@ export default function RootLayout({
             <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G" />
           </filter>
         </svg>
-        <MaintenanceBanner />
-        <Navbar />
-        <main className={siteConfig.maintenance.enabled ? "pt-9" : undefined}>{children}</main>
-        <Footer />
+        <LenisProvider>
+          <MaintenanceBanner />
+          <Navbar />
+          <main className={siteConfig.maintenance.enabled ? "pt-9" : undefined}>{children}</main>
+          <Footer />
+        </LenisProvider>
       </body>
     </html>
   );

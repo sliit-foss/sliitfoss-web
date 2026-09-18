@@ -4,18 +4,20 @@ export const siteConfig = {
   description: "A community of volunteers who believe in the power of Free & Open Source Software.",
   url: "https://sliitfoss.org",
   maintenance: {
-    enabled: true,
+    enabled: false,
     message: "🚧 We're currently under maintenance — some features may be unavailable. Thanks for your patience!"
   },
   whatsappGroup: "https://chat.whatsapp.com/D2R64rOaXvED98XgvJxTXn",
   socials: {
-    github: "https://github.com/sliitfoss",
-    linkedin: "https://linkedin.com/company/sliitfoss",
-    discord: "https://discord.gg/sliitfoss",
-    twitter: "https://twitter.com/sliitfoss"
+    github: "https://github.com/sliit-foss",
+    linkedin: "https://www.linkedin.com/company/sliit-foss-community",
+    instagram: "https://www.instagram.com/sliitfoss/",
+    facebook: "https://www.facebook.com/sliitfoss",
+    x: "https://x.com/fosssliit"
   },
   contact: {
-    email: "foss@sliit.lk",
+    email: "infosliitfoss@gmail.com",
+    phone: "+94 76 726 8555",
     location: "SLIIT, Malabe, Sri Lanka"
   },
   stats: [

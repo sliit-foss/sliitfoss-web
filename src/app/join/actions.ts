@@ -1,9 +1,14 @@
 "use server";
 
+import { isSpam } from "@/lib/spam";
 import { membershipSchema, type FormState } from "@/lib/mail/schemas";
 import { appendMembershipRow } from "@/lib/sheets";
 
 export async function submitMembership(_prev: FormState, formData: FormData): Promise<FormState> {
+  if (await isSpam(formData)) {
+    return { ok: true, message: "Thanks!" };
+  }
+
   const parsed = membershipSchema.safeParse({
     name: formData.get("name"),
     email: formData.get("email"),
