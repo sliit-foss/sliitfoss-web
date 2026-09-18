@@ -1,6 +1,6 @@
 import { headers } from "next/headers";
 
-export const HONEYPOT_FIELD = "nickname";
+const HONEYPOT_FIELD = "nickname";
 
 const WINDOW_MS = 10 * 60 * 1000;
 const MAX_PER_WINDOW = 5;
@@ -13,6 +13,7 @@ export async function isSpam(formData: FormData): Promise<boolean> {
 
   const ip = (await headers()).get("x-forwarded-for")?.split(",")[0]?.trim() || "local";
   const now = Date.now();
+  if (hits.size > 1000) hits.clear();
   const recent = (hits.get(ip) ?? []).filter((t) => now - t < WINDOW_MS);
   recent.push(now);
   hits.set(ip, recent);
