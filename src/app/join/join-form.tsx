@@ -10,6 +10,7 @@ import { ThemedSelect } from "@/components/ui/themed-select";
 import { QRCodeSVG } from "qrcode.react";
 import { submitMembership } from "./actions";
 import { initialFormState } from "@/lib/mail/schemas";
+import { DynamicIcon } from "lucide-react/dynamic";
 
 const inputClass =
   "w-full px-4 py-3 rounded-xl border border-black/6 bg-white text-[#111] text-sm focus:outline-none focus:ring-2 focus:ring-[#999]/20 focus:border-[#999] transition-all";
@@ -349,7 +350,7 @@ export function JoinForm() {
                             className="sr-only"
                           />
                           <div className="text-2xl mb-2" aria-hidden>
-                            {team.emoji}
+                            <DynamicIcon name={team.emoji} size={25} />
                           </div>
                           <div className="text-sm font-semibold text-[#111]">{team.name}</div>
                           <div className="mt-1 text-xs leading-relaxed text-[#777]">{team.description}</div>
