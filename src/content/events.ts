@@ -1,5 +1,6 @@
 import { z } from "zod";
 
+import bashaway2026 from "@/data/events/bashaway-2026.json";
 import buildWithAi2026 from "@/data/events/build-with-ai-2026.json";
 import docker101 from "@/data/events/docker-101.json";
 import gitWorkshop from "@/data/events/git-workshop.json";
@@ -46,7 +47,7 @@ export type Event = z.infer<typeof eventSchema>;
  * To add an event: create the JSON file, then import and register it below.
  * Order here is the order events render in.
  */
-const eventSources: unknown[] = [hackfoss2026, gitWorkshop, buildWithAi2026, docker101];
+const eventSources: unknown[] = [bashaway2026, hackfoss2026, gitWorkshop, buildWithAi2026, docker101];
 
 export const events: Event[] = eventSources.map((source, index) => {
   const parsed = eventSchema.safeParse(source);

@@ -69,7 +69,7 @@ export function BlogPostView({ post }: { post: BlogPost }) {
 
   return (
     <>
-      <section className={`pt-32 pb-16 md:pt-40 md:pb-20 px-6 bg-gradient-to-br ${post.gradient}`}>
+      <section className={`pt-32 pb-16 md:pt-40 md:pb-20 px-6 bg-linear-to-br ${post.gradient}`}>
         <div className="max-w-4xl mx-auto">
           <div className="flex flex-wrap items-center gap-2 mb-4">
             {post.tags.map((tag) => (

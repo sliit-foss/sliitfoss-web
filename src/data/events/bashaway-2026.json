@@ -1,0 +1,20 @@
+{
+  "slug": "bashaway-2026",
+  "name": "Bashaway 2026",
+  "date": "2026-11-30",
+  "type": "hackathon",
+  "description": "A unique competition that keeps the coders around the island on their toes. Welcome to Bashaway 2026, the fifth edition of the first-ever scripting and automation competition in Sri Lanka!",
+  "shortDescription": "Sri Lanka's first scripting and automation competition, bringing coders from around the island together for a unique challenge.",
+  "venue": "Online & SLIIT Malabe Campus",
+  "speakers": [],
+  "schedule": [],
+  "registrationUrl": "https://bashaway.sliitfoss.org",
+  "banner": "/events/bashaway-2026/bashaway-2026.jpeg",
+  "status": "upcoming",
+  "color": {
+    "bg": "bg-gradient-to-br from-amber-50 to-orange-100",
+    "accent": "text-orange-600",
+    "borderHover": "hover:border-orange-200",
+    "shape": "bg-orange-200/40"
+  }
+}

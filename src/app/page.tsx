@@ -5,8 +5,11 @@ import { EventsStack } from "@/components/home/events-stack";
 import { SectionDivider } from "@/components/layout/section-divider";
 import { BlogPreview } from "@/components/home/blog-preview";
 import { CTA } from "@/components/home/cta";
+import { getMediumPosts } from "@/lib/medium";
 
-export default function Home() {
+export default async function Home() {
+  const posts = await getMediumPosts();
+
   return (
     <>
       <Hero />
@@ -14,7 +17,7 @@ export default function Home() {
       <Ticker />
       <EventsStack />
       <SectionDivider />
-      <BlogPreview />
+      <BlogPreview posts={posts} />
       <CTA />
     </>
   );

@@ -4,6 +4,15 @@ import Image from "next/image";
 import { galleryItems } from "@/content/gallery";
 import { Stagger, StaggerItem } from "@/components/animations/stagger";
 
+// Container is max-w-6xl (1152px) minus padding, so ~1120px of usable grid width.
+// This maps each card's lg:col-span-N to its real rendered width so Next.js
+// picks a large enough image instead of upscaling a small one.
+function getSizes(layout: string) {
+  const span = Number(/lg:col-span-(\d+)/.exec(layout)?.[1] ?? 12);
+  const px = Math.round((span / 12) * 1120);
+  return `(max-width: 768px) 100vw, (max-width: 1024px) 50vw, ${px}px`;
+}
+
 export function GalleryGrid() {
   return (
     <section className="pb-24 md:pb-32 px-6 bg-[#fafafa]">
@@ -26,11 +35,12 @@ export function GalleryGrid() {
                       src={item.image}
                       alt={item.alt}
                       fill
-                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      sizes={getSizes(item.layout)}
+                      unoptimized={item.unoptimized}
                       className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
                     />
 
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/38 via-black/8 to-transparent opacity-100 md:opacity-0 transition-opacity duration-300 md:group-hover:opacity-100" />
+                    <div className="absolute inset-0 bg-linear-to-t from-black/38 via-black/8 to-transparent opacity-100 md:opacity-0 transition-opacity duration-300 md:group-hover:opacity-100" />
 
                     <div className="absolute left-4 bottom-4 right-4">
                       <div className="inline-flex max-w-full translate-y-0 flex-col rounded-2xl border border-white/16 bg-black/12 px-3.5 py-3 text-white backdrop-blur-[10px] transition-all duration-300 opacity-100 md:translate-y-2 md:opacity-0 md:group-hover:translate-y-0 md:group-hover:opacity-100">
